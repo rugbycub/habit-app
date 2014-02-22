@@ -29,6 +29,8 @@ group :doc do
   gem 'sdoc', require: false
 end
 
+gem 'devise'
+
 gem 'sidekiq'
 
 gem 'sidetiq'

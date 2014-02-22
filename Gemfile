@@ -42,3 +42,5 @@ gem 'pry'
 gem 'dotenv-rails'
 
 ruby '2.0.0'
+
+gem 'mandrill'

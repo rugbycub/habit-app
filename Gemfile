@@ -37,6 +37,8 @@ gem 'sidetiq'
 
 gem 'typhoeus'
 
+gem 'json'
+
 gem 'unicorn'
 
 gem 'pry'

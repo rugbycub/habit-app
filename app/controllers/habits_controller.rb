@@ -5,7 +5,7 @@ class HabitsController < ApplicationController
 
     respond_to do |f|
       f.html
-      f.json { render json: { @habits.to_json } }
+      f.json { render json: @habits.to_json }
     end
   end
 
@@ -14,7 +14,7 @@ class HabitsController < ApplicationController
 
     respond_to do |f|
       f.html
-      f.json { render json: { @habit.to_json } }
+      f.json { render json: @habit.to_json }
     end
   end
 
@@ -23,7 +23,17 @@ class HabitsController < ApplicationController
 
     repond_to do |f|
       f.html
-      f.json { render json: { @habit.to_json } }
+      f.json { render json: @habit.to_json }
+    end
+  end
+
+  def destroy
+    habit = Habit.find(params[:id])
+    habit.destroy
+
+    respond_to do |f|
+      f.html { redirect_to action: :index }
+      f.json { render json: habit.to_json }
     end
   end
 

@@ -42,7 +42,6 @@ ActiveRecord::Schema.define(version: 20140223035736) do
   end
 
   create_table "messages", force: true do |t|
-    t.integer  "message_from_user_id"
     t.integer  "sender_id"
     t.integer  "receiver_id"
     t.text     "body"

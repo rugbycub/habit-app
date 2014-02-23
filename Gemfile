@@ -48,3 +48,7 @@ gem 'dotenv-rails'
 ruby '2.0.0'
 
 gem 'mandrill'
+
+group :development, :test do
+  gem 'rspec-rails', '~> 3.0.0.beta'
+end

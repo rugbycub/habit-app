@@ -1,8 +1,8 @@
 class CompletionsController < ApplicationController
 
   def create
-    habit = current_user.habits.find_by_name()
-    complete = habit.completions.create()
+    habit = current_user.habits.find_by_name(params[:name])
+    complete = habit.completions.create(status: true)
 
     respond_to do |f|
       f.json { render json: complete.to_json }

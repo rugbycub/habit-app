@@ -49,6 +49,8 @@ ruby '2.0.0'
 
 gem 'mandrill'
 
+gem 'twilio-ruby'
+
 group :development, :test do
   gem 'rspec-rails', '~> 3.0.0.beta'
 end

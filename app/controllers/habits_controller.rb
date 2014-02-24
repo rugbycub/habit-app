@@ -1,7 +1,8 @@
 class HabitsController < ApplicationController
 
   def index
-    @habits = Habit.all
+    
+    @habits = current_user.habits # TODO where habit is active
 
     respond_to do |f|
       f.html

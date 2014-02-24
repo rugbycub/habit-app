@@ -1,0 +1,14 @@
+<%= render 'week' %>
+<% if @habits.first.nil? %>
+  <div><%= link_to "Add your first event", new_habit_path %></div>
+<% else %>
+  <% @habits.each do |h| %>
+    <div class="col-md-4">
+      <h3><%= h.name %></h3>
+      <h5><%= h.frequency %>X per week</h5>
+    </div>
+    <div class="col-md-8">
+      <%= render 'pills' %>
+    </div>
+  <% end %>
+<% end %>

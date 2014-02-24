@@ -16,7 +16,7 @@
   <%= f.text_field :tagline, value: :tagline %>
 
   <div><%= f.label "Current Photo" %><br>
-  <%= image_tag user.profile_pic.url(:square) %>
+  <%= image_tag current_user.profile_pic.url(:square) %>
 
   <div><%= f.label "Choose New Profile Picture" %><br>
   <%= f.file_field :profile_pic %></div>

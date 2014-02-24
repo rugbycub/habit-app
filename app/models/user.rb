@@ -15,7 +15,7 @@ class User < ActiveRecord::Base
   has_many :events, :through => :habits
 
   #[NIKKI] specifies photo styles for paperclip/aws
-  has_attached_file :profile_pic, styles: {
+  has_attached_file :profile_pic, dependent: :destroy, styles: {
     thumb: '100x100>',
     square: '200x200#',
     medium: '300x300>'

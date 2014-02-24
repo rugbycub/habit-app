@@ -51,6 +51,15 @@ gem 'mandrill'
 
 gem 'twilio-ruby'
 
+#[NIKKI]for heroku
+gem 'rails_12factor'
+
+#[NIKKI] gem for file upload, using aws
+gem 'paperclip'
+
+#[NIKKI] gem for aws, using with paperclip
+gem 'aws-sdk'
+
 group :development, :test do
   gem 'rspec-rails', '~> 3.0.0.beta'
 end

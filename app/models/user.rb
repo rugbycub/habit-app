@@ -21,7 +21,7 @@ class User < ActiveRecord::Base
     medium: '300x300>'
   }
 
-  before_validation :clean_phone_attribute
+  #before_validation :clean_phone_attribute
   # Validate the attached image is image/jpg, image/png, etc.
   validates_attachment_content_type :profile_pic, :content_type => /\Aimage\/.*\Z/
 

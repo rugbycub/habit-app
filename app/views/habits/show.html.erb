@@ -8,11 +8,21 @@
 
 <h2>Public</h2>
 
-<div class="underline" data-date='<%= DateTime.now.beginning_of_week()-1  %>'>
+<div class="underline" data-month='<%= DateTime.now.beginning_of_week()-1  %>'>
   <button type="button" class="btn btn-default right">SMS Reminders</button>
   <% date = DateTime.now.beginning_of_week - 1 %>
   <h4 class="center-text"><%= date.strftime('Week of %-m/%-d/%Y') %></h4>
 </div>
+
+<ul class="nav nav-pills">
+  <li><a href="#">Sun</a></li>
+  <li class="active center-text"><a href="#">M</a></li>
+  <li><a href="#">Tu</a></li>
+  <li><a href="#">W</a></li>
+  <li><a href="#">Th</a></li>
+  <li><a href="#">F</a></li>
+  <li><a href="#">Sat</a></li>
+</ul>
 
 <h4 class="center-text underline">Leaderboard</h4>
 <div id="leaderboard" ></div>

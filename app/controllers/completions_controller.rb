@@ -10,7 +10,7 @@ class CompletionsController < ApplicationController
   end
 
   def destroy
-    complete = current_user.habits.find_by_name().completions.last
+    complete = current_user.habits.find_by_name(params[:name]).completions.last
     complete.destroy
 
     respond_to do |f|

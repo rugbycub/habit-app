@@ -14,9 +14,9 @@
   <h4 class="center-text"><%= date.strftime('Week of %-m/%-d/%Y') %></h4>
 </div>
 
-<ul class="nav nav-pills">
+<ul class="nav nav-pills center-text" data-name="<%= @habit.name %>">
   <li><a href="#">Sun</a></li>
-  <li class="active center-text"><a href="#">M</a></li>
+  <li class="active"><a href="#">M</a></li>
   <li><a href="#">Tu</a></li>
   <li><a href="#">W</a></li>
   <li><a href="#">Th</a></li>

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140224071737) do
+ActiveRecord::Schema.define(version: 20140224180910) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -45,6 +45,21 @@ ActiveRecord::Schema.define(version: 20140224071737) do
     t.integer  "sender_id"
     t.integer  "receiver_id"
     t.text     "body"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "points", force: true do |t|
+    t.integer  "user_id"
+    t.integer  "pointable_id"
+    t.integer  "action_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "points_actions", force: true do |t|
+    t.string   "action_name"
+    t.integer  "points_value"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

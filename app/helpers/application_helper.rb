@@ -1,5 +1,6 @@
 module ApplicationHelper
- #so log-in form is available in layouts/application
+include CompletionsHelper
+
  def resource_name
     :user
   end

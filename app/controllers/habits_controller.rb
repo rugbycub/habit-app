@@ -13,7 +13,7 @@ before_action :authenticate_user!
 
   def show 
     @habit = Habit.find(params[:id])
-
+    @completions = @habit.completions.where( "date > ? AND date < ? ", Date.today.beginning_of_week-2,Date.today+1 )
     respond_to do |f|
       f.html
       f.json { render json: @habit.to_json }

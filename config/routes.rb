@@ -5,4 +5,6 @@ HabitApp::Application.routes.draw do
   post "/completions", to: "completions#create"
   delete "/completions", to: "completions#destroy"
 
+  post "/posts", to: "posts#create"
+
 end

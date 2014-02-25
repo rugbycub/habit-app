@@ -25,8 +25,9 @@ before_action :authenticate_user!
   end
 
   def create
+    user = User.find(current_user.id)
     params.require(:habit).permit!
-    @habit = Habit.new(params[:habit])
+    @habit = user.habits.new(params[:habit])
     if @habit.save
       redirect_to "habits#show"
     else

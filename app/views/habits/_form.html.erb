@@ -1,18 +1,22 @@
 <%= form_for @habit do |f| %>
-  <%= f.label :name %>
+  <%= f.label("What would you like to do?") %>
   <%= f.text_field :name, :autofocus => true %>
   <br>
-  <%= f.label :category %>
-  <%= f.text_field :category %>
-  <br>
-  <%= f.label :frequency %>
+
+  <%= f.label :"How Often?" %>
   <%= f.text_field :frequency %>
   <br>
-  <%= f.label :timeframe %>
-  <%= f.text_field :timeframe %>
+  <%= f.label :"Per" %>
+  <%= radio_button_tag(:timeframe, "week") %>
+  <%= label_tag(:timeframe_week, "Week") %>
+  <%= radio_button_tag(:timeframe, "month") %>
+  <%= label_tag(:timeframe_month, "Month") %>
+
   <br>
-  <%= f.label :visibility %>
-  <%= f.text_field :visibility %>
+  <%= radio_button_tag(:visibility, "public") %>
+  <%= label_tag(:visibility_public, "Public") %>
+  <%= radio_button_tag(:visibility, "private") %>
+  <%= label_tag(:visibility_private, "Private") %>
   <br>
   <p><p>
   <%= f.submit class: "btn btn-primary" %>

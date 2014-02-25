@@ -20,6 +20,10 @@
 
 $(function(){
 
+  $('#post').on('click', function(event){
+    alert('post was added!')
+  })
+
   $('.nav').on('click', 'li' ,function(event){
     event.preventDefault();
     var d = Date.parse(this.dataset.day);

@@ -3,7 +3,7 @@ class PostsController < ApplicationController
 
   def create
     user = current_user
-    habit = user.habits.find_by_name(params[:habit])
+    habit = user.habits.find_by_name(params[:name])
 
     post = user.create_post(params[:post])
     post.habit_id = habit.id
@@ -14,5 +14,5 @@ class PostsController < ApplicationController
     end
 
   end
-  
+
 end

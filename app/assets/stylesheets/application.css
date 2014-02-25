@@ -74,6 +74,10 @@
   border-bottom: 1px solid black;
 }
 
+.form-row p {
+  
+}
+
 .ui-sortable-placeholder {  
     border: 3px dashed #aaa;  
     width: 100%;  

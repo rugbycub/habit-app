@@ -1,0 +1,26 @@
+<div class="container">
+  <div id="pic">
+      <%= @current_user.profile_pic unless @current_user.profile.nil? %>
+  </div>
+  <div id="profileheading">
+    <h1><%= @current_user.first_name %> <%= @current_user.last_name %></h1><br>
+    <h3><%= @current_user.tagline unless @current_user.tagline.nil? %></h3>
+  </div>
+
+  <div id="stats">
+    <h2>
+      <% if @current_user.habits.count.nil? %>
+        <%= No %>
+      <% else %> 
+        <%= @current_user.habits.count %>
+      <% end %>
+      Habits
+      render "add_habit"
+    </h2><br>
+    <h2>
+      [POINTS GO HERE] Points
+    </h2>
+  </div>
+  
+  
+</div>

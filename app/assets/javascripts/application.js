@@ -24,10 +24,10 @@ $(function(){
     var params = {name: parent.data().name};
     if ( $(this).hasClass('completed') ){
       $(this).removeClass('completed');
-      // $.ajax({type: 'delete', url: "/completions", data: params});
+      $.ajax({type: 'delete', url: "/completions", data: params}).done(function(r){ alert("Deleted the completion"); }).fail(function(r){ alert("You Failed"); });
     } else {
       $(this).addClass('completed');
-      // $.ajax({type: 'post', url: "/completions", data: params});
+      $.ajax({type: 'post', url: "/completions", data: params}).done(function(r){ alert("Congratualtions"); }).fail(function(r){ alert("You Failed"); });
     }
   });
 

@@ -4,5 +4,7 @@ HabitApp::Application.routes.draw do
   root :to => "welcome#index"
 
   get "/habits/:id", to: "habits#show", as: "habit"
+  post "/completions", to: "completions#create"
+  delete "/completions", to: "completions#destroy"
 
 end

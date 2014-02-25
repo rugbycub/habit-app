@@ -22,19 +22,18 @@ $(function(){
 
   $('.nav').on('click', 'li' ,function(event){
     event.preventDefault();
-    // var parent = $(this).closest('ul');
-    // var params = {name: parent.data().name};
-    // if ( $(this).hasClass('completed') ){
-    //   $(this).removeClass('completed');
-    //   $.ajax({type: 'delete', url: "/completions", data: params}).done(function(r){ alert("Deleted the completion"); }).fail(function(r){ alert("You Failed"); });
-    // } else {
-    //   $(this).addClass('completed');
-    //   $.ajax({type: 'post', url: "/completions", data: params}).done(function(r){ alert("Congratualtions"); }).fail(function(r){ alert("You Failed"); });
-    // }
     var d = Date.parse(this.dataset.day);
     var day = new Date(d);
-    if (day < new Date()){
-      alert("element");
+     if (day < new Date()){
+      var parent = $(this).closest('ul');
+      var params = {name: parent.data().name, date: $(this).data().day};
+      if ( $(this).hasClass('completed') ){
+        $(this).removeClass('completed');
+        $.ajax({type: 'delete', url: "/completions", data: params}).done(function(r){ alert("Deleted the completion"); }).fail(function(r){ alert("You Failed"); });
+      } else {
+        $(this).addClass('completed');
+        $.ajax({type: 'post', url: "/completions", data: params}).done(function(r){ alert("Congratualtions"); }).fail(function(r){ alert("You Failed"); });
+      }  
     }
 
   });

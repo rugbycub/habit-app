@@ -3,7 +3,7 @@ class CompletionsController < ApplicationController
   def create
     habit = current_user.habits.find_by_name(params[:name])
 
-    complete = habit.completions.create(status: true)
+    complete = habit.completions.create(status: true, date: Date.parse(params[:date]))
 
     respond_to do |f|
       f.json { render json: complete.to_json }

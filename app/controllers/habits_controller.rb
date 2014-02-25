@@ -12,7 +12,7 @@ class HabitsController < ApplicationController
 
   def show 
     @habit = Habit.find(params[:id])
-
+    @completions = @habit.completions.where( "date > ? AND date < ? ", DateTime.now.beginning_of_week-2,DateTime.now )
     respond_to do |f|
       f.html
       f.json { render json: @habit.to_json }

@@ -1,0 +1,19 @@
+<%= form_for @habit do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name, :autofocus => true %>
+  <br>
+  <%= f.label :category %>
+  <%= f.text_field :category %>
+  <br>
+  <%= f.label :frequency %>
+  <%= f.text_field :frequency %>
+  <br>
+  <%= f.label :timeframe %>
+  <%= f.text_field :timeframe %>
+  <br>
+  <%= f.label :visibility %>
+  <%= f.text_field :visibility %>
+  <br>
+  <p><p>
+  <%= f.submit class: "btn btn-primary" %>
+<% end %>

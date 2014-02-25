@@ -1,10 +1,15 @@
 <div class="container">
   <div id="pic">
-      <%= @current_user.profile_pic unless @current_user.profile.nil? %>
+    <% unless @profile.profile_pic.nil? %> 
+      <%= image_tag @profile.profile_pic.url(:medium) %>
+    <% end %>
   </div>
   <div id="profileheading">
     <h1><%= @current_user.first_name %> <%= @current_user.last_name %></h1><br>
-    <h3><%= @current_user.tagline unless @current_user.tagline.nil? %></h3>
+    <h3>
+      <% unless @profile.tagline.nil? %>
+        <%= @profile.tagline %></h3>
+      <% end %>
   </div>
 
   <div id="stats">
@@ -15,12 +20,10 @@
         <%= @current_user.habits.count %>
       <% end %>
       Habits
-      render "add_habit"
+      <%= render "add_habit" %>
     </h2><br>
     <h2>
       [POINTS GO HERE] Points
     </h2>
   </div>
-  
-  
 </div>

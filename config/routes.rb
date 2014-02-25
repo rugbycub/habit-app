@@ -10,6 +10,7 @@ HabitApp::Application.routes.draw do
   post "/completions", to: "completions#create"
   delete "/completions", to: "completions#destroy"
 
-  get "/profile", to: "profile#show", as: 'profile'
+  get "/profile", to: "profiles#show", as: "profile"
+  get "/sign_up/profile", to: "profiles#new", as: "add_profile"
 
 end

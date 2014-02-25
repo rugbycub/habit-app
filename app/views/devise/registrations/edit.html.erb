@@ -12,14 +12,14 @@
   <div><%= f.label "Phone Number" %><br>
   <%= f.telephone_field :phone_number, value: :phone_number %></div>
 
-  <div><%= f.label "Tagline (optional)" %><br>
-  <%= f.text_field :tagline, value: :tagline %>
+  <!-- <div><%= f.label "Tagline (optional)" %><br>
+  <%= f.text_field :tagline, value: :tagline %> -->
 
-  <div><%= f.label "Current Photo" %><br>
-  <%= image_tag current_user.profile_pic.url(:square) %>
+<!--   <div><%= f.label "Current Photo" %><br>
+  <%= image_tag current_user.profile_pic.url(:square) %> -->
 
-  <div><%= f.label "Choose New Profile Picture" %><br>
-  <%= f.file_field :profile_pic %></div>
+<!--   <div><%= f.label "Choose New Profile Picture" %><br>
+  <%= f.file_field :profile_pic %></div> -->
 
   <div><%= f.label :email %><br />
   <%= f.email_field :email, :autofocus => true %></div>

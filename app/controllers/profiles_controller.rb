@@ -3,16 +3,16 @@ before_action :authenticate_user!
 
   def new
     @user = current_user
-    @profile = @user.profile.new()
+    @profile = @user.build_profile
   end
 
   def create
     @user = current_user
-    profile = @user.profile.build(profile_params)
+    profile = @user.build_profile(profile_params)
     if profile.save
       redirect_to profile_path
     else
-      render :new
+      redirect_to add_profile_path
     end
   end
 

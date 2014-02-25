@@ -22,10 +22,17 @@ before_action :authenticate_user!
 
   def new
     @habit = Habit.new
+  end
 
-    respond_to do |f|
-      f.html
-      f.json { render json: @habit.to_json }
+  def create
+    user = User.find(current_user.id)
+    params.require(:habit).permit!
+    @habit = user.habits.new(params[:habit])
+    if @habit.save
+      redirect_to "habits#show"
+    else
+      @title = "New Habit"
+      render = 'new'
     end
   end
 

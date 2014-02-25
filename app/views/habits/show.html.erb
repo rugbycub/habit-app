@@ -25,4 +25,8 @@
 </ul>
 
 <h4 class="center-text underline">Leaderboard</h4>
-<div id="leaderboard" ></div>
+<div id="leaderboard" >
+  <% current_user.friends.limit(3).each do |friend| %>
+    <h3><%= "#{friend.first_name} #{friend.last_name}" %></h3>
+  <% end %>
+</div>

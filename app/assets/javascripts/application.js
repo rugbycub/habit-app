@@ -21,11 +21,14 @@
 $(function(){
 
   $('#post').on('click', function(event){
+    event.preventDefault();
     var params = {};
     params.post = {body: $('.form-control').val() };
-    params.name = $('.form-control').data().name
+    params.name = $('.form-control').data().name;
+    // $.ajax({type: 'post', url: "/posts", data: params }).done(function(response){}); the ajax call
+    $('.posts').append('<h4>' + params.post.body + '</h4>'); // this will be a handle bar template;
 
-    $('.posts').append('<h4>' + params.post.body + '</h4>') // this will be a handle bar template
+    $('.form-control').val("") 
   
   });
 

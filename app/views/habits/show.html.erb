@@ -8,20 +8,20 @@
 
 <h2>Public</h2>
 
-<div class="underline" data-month='<%= DateTime.now.beginning_of_week()-1  %>'>
+<div class="underline" data-month='<%= Date.today.beginning_of_week-1  %>'>
   <button type="button" class="btn btn-default right">SMS Reminders</button>
-  <% date = DateTime.now.beginning_of_week - 1 %>
+  <% date = Date.today.beginning_of_week - 1 %>
   <h4 class="center-text"><%= date.strftime('Week of %-m/%-d/%Y') %></h4>
 </div>
 
 <ul class="nav nav-pills center-text" data-name="<%= @habit.name %>">
-  <li class="<%= "active" if date.cwday == DateTime.now.cwday %> <%=  "completed" if completed?(@completions, date) %>" data-day="<%= date.to_s %>"><a href="#">Sun</a></li>
-  <li class="<%= "active" if (date+1).cwday == DateTime.now.cwday %> <%=  "completed" if completed?(@completions, date+1) %>" data-day="<%= (date+1).to_s %>"><a href="#">M</a></li>
-  <li class="<%=  "active" if (date+2).cwday == DateTime.now.cwday %> <%=  "completed" if completed?(@completions, date+2) %>" data-day="<%= (date+2).to_s %>"><a href="#">Tu</a></li>
-  <li class="<%=  "active" if (date+3).cwday == DateTime.now.cwday %> <%=  "completed" if completed?(@completions, date+3) %>" data-day="<%= (date+3).to_s %>"><a href="#">W</a></li>
-  <li class="<%=  "active" if (date+4).cwday == DateTime.now.cwday %> <%=  "completed" if completed?(@completions, date+4) %>" data-day="<%= (date+4).to_s %>"><a href="#">Th</a></li>
-  <li class="<%=  "active" if (date+5).cwday == DateTime.now.cwday %> <%=  "completed" if completed?(@completions, date+5) %>" data-day="<%= (date+5).to_s %>"><a href="#">F</a></li>
-  <li class="<%=  "active" if (date+6).cwday == DateTime.now.cwday %> <%=  "completed" if completed?(@completions, date+6) %>" data-day="<%= (date+6).to_s %>"><a href="#">Sat</a></li>
+  <li class="<%= "active" if date.cwday == Date.today.cwday %> <%=  "completed" if completed?(@completions, date) %>" data-day="<%= date.to_s %>"><a href="#">Sun</a></li>
+  <li class="<%= "active" if (date+1).cwday == Date.today.cwday %> <%=  "completed" if completed?(@completions, date+1) %>" data-day="<%= (date+1).to_s %>"><a href="#">M</a></li>
+  <li class="<%=  "active" if (date+2).cwday == Date.today.cwday %> <%=  "completed" if completed?(@completions, date+2) %>" data-day="<%= (date+2).to_s %>"><a href="#">Tu</a></li>
+  <li class="<%=  "active" if (date+3).cwday == Date.today.cwday %> <%=  "completed" if completed?(@completions, date+3) %>" data-day="<%= (date+3).to_s %>"><a href="#">W</a></li>
+  <li class="<%=  "active" if (date+4).cwday == Date.today.cwday %> <%=  "completed" if completed?(@completions, date+4) %>" data-day="<%= (date+4).to_s %>"><a href="#">Th</a></li>
+  <li class="<%=  "active" if (date+5).cwday == Date.today.cwday %> <%=  "completed" if completed?(@completions, date+5) %>" data-day="<%= (date+5).to_s %>"><a href="#">F</a></li>
+  <li class="<%=  "active" if (date+6).cwday == Date.today.cwday %> <%=  "completed" if completed?(@completions, date+6) %>" data-day="<%= (date+6).to_s %>"><a href="#">Sat</a></li>
 </ul>
 
 <h4 class="center-text underline">Leaderboard</h4>

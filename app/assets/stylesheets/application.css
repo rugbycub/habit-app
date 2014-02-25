@@ -11,6 +11,48 @@
  *= require_self
  *= require_tree .
  */
+ #logo-head {
+  text-align: center;
+ }
+
+ .clear-nav {
+  margin-bottom: 75px;
+ }
+ .ele-right {
+  float: right;
+ }
+ .ele-center{
+  margin: 0 auto;
+ }
+ .alignleft {
+    float: left;
+    text-align:left;
+    width:33.33333%;
+}
+.aligncenter {
+    float: left;
+    text-align:center;
+    width:33.33333%;
+}
+.alignright {
+    float: left;
+    text-align:right;
+    width:33.33333%;
+}
+.section-head {
+    border-bottom: 1px solid black;
+}
+.first-event {
+  height: 150px;
+  padding-top: 50px;
+  border: 5px dashed grey;
+  margin-top: 20px;
+  text-align: center;
+  background-color: #eeeeee;
+}
+.first-event:hover{
+   background-color: white;
+}
 
  .right{
   float: right;

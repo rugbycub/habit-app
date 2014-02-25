@@ -1,7 +1,8 @@
 class HabitsController < ApplicationController
 
   def index
-    @habits = Habit.all
+    
+    @habits = current_user.habits # TODO where habit is active
 
     respond_to do |f|
       f.html
@@ -21,7 +22,7 @@ class HabitsController < ApplicationController
   def new
     @habit = Habit.new
 
-    repond_to do |f|
+    respond_to do |f|
       f.html
       f.json { render json: @habit.to_json }
     end

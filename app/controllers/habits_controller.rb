@@ -22,7 +22,7 @@ class HabitsController < ApplicationController
   def new
     @habit = Habit.new
 
-    repond_to do |f|
+    respond_to do |f|
       f.html
       f.json { render json: @habit.to_json }
     end

@@ -1,6 +1,6 @@
 <%= render partial: 'section_head', locals: {title: 'week', actions:'add_habit'} %>
 <% if @habits.first.nil? %>
-  <div><%= link_to "Add your first event", new_habit_path %></div>
+  <a href="<%= new_habit_path %>"><div class="first-event">Add your first event</div></a>
 
 <% else %>
   <% @habits.each do |h| %>

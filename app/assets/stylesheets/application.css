@@ -74,6 +74,22 @@
   border-bottom: 1px solid black;
 }
 
+.color {
+  border: 3px #428bca solid;
+  margin-top: -12px;
+  margin-bottom: 10px
+}
+
+.progress-li{
+  font-size: 12px;
+  padding: 2px;
+  border: solid 1px lightgrey;
+  width: 20px;
+  display: block;
+  float: left;
+  text-align: center
+}
+
 .form-row p {
   
 }

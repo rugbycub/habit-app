@@ -1,4 +1,6 @@
 class CompletionsController < ApplicationController
+before_action :authenticate_user!
+
 
   def create
     habit = current_user.habits.find_by_name(params[:name])

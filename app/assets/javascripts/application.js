@@ -12,6 +12,7 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require jquery.ui.sortable
 //= require turbolinks
 //= require handlebars
 //= require_tree .
@@ -33,3 +34,12 @@ $(function(){
   });
 
 });
+
+$(function() {  
+  $( "#sortable" ).sortable({   
+    placeholder: "ui-sortable-placeholder",
+    start: function(e, ui){
+        ui.placeholder.height(ui.item.height());
+    }   
+  });  
+});  

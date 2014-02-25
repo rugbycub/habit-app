@@ -21,7 +21,8 @@
 $(function(){
 
   $('#post').on('click', function(event){
-    alert('post was added!')
+    var params = {}
+    params.post = {body: $('.form_control').val() }
   })
 
   $('.nav').on('click', 'li' ,function(event){

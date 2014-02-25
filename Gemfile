@@ -51,6 +51,8 @@ gem 'mandrill'
 
 gem 'twilio-ruby'
 
+gem 'handlebars_assets'
+
 #[NIKKI]for heroku
 gem 'rails_12factor'
 

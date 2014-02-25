@@ -1,1 +1,3 @@
-<%= link_to "+", new_habit_path %>
+<p class="text-right">
+  <%= link_to content_tag(:span, nil, {class: 'glyphicon glyphicon-plus-sign'}), new_habit_path, class: "btn btn-sm btn-add" %>
+</p>

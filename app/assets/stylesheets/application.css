@@ -11,36 +11,33 @@
  *= require_self
  *= require_tree .
  */
- #logo-head {
-  text-align: center;
+ 
+ body {
+  background-color: #ecf0f1 !important;
+  font-family: 'Inika', serif;
  }
 
- .clear-nav {
-  margin-bottom: 75px;
+ .btn-add {
+  background-color: #e5b730;
  }
- .ele-right {
-  float: right;
+
+ .habit-row {
+  background-color: white;
+  padding: 10px 0px;
+  margin-top: 10px;
+  display: inline-block;
+  width: 100%;
  }
- .ele-center{
-  margin: 0 auto;
+
+ .habit-title{
+  margin-top: 0px;
  }
- .alignleft {
-    float: left;
-    text-align:left;
-    width:33.33333%;
-}
-.aligncenter {
-    float: left;
-    text-align:center;
-    width:33.33333%;
-}
-.alignright {
-    float: left;
-    text-align:right;
-    width:33.33333%;
-}
 .section-head {
-    border-bottom: 1px solid black;
+    background-color: #f5d453;
+    color: #526170;
+    padding-top: 10px;
+    font-size: 20px;
+    padding-right: 2%;
 }
 .first-event {
   height: 150px;
@@ -54,6 +51,9 @@
    background-color: white;
 }
 
+.left {
+  float: left;
+}
  .right{
   float: right;
  }
@@ -62,11 +62,33 @@
   clear: right;
 }
 
-
 .center-text {
   text-align: center;
 }
 
+.right-text {
+  text-align: right;
+}
+
 .underline {
   border-bottom: 1px solid black;
+}
+
+.ui-sortable-placeholder {  
+    border: 3px dashed #aaa;  
+    width: 100%;  
+    background: #ccc;
+    margin: 10px 0;
+}  
+
+.move{
+  background-color: #f5d453;
+  padding: 8px 12px;
+  vertical-align: middle;
+}
+
+@media(max-width: 500px) {
+  .section-head{
+    font-size: 14px;
+  }
 }

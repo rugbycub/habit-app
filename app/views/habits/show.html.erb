@@ -15,13 +15,13 @@
 </div>
 
 <ul class="nav nav-pills center-text" data-name="<%= @habit.name %>">
-  <li><a href="#">Sun</a></li>
-  <li class="active"><a href="#">M</a></li>
-  <li><a href="#">Tu</a></li>
-  <li><a href="#">W</a></li>
-  <li><a href="#">Th</a></li>
-  <li><a href="#">F</a></li>
-  <li><a href="#">Sat</a></li>
+  <li class="<%=  "active"  if date.cwday == DateTime.now.cwday  %>" data-day="<%= date.to_s %>"><a href="#">Sun</a></li>
+  <li class="<%=  "active"  if (date+1).cwday == DateTime.now.cwday  %>" data-day="<%= (date+1).to_s %>"><a href="#">M</a></li>
+  <li class="<%=  "active"  if (date+2).cwday == DateTime.now.cwday  %>" data-day="<%= (date+2).to_s %>"><a href="#">Tu</a></li>
+  <li class="<%=  "active"  if (date+3).cwday == DateTime.now.cwday  %>" data-day="<%= (date+3).to_s %>"><a href="#">W</a></li>
+  <li class="<%=  "active"  if (date+4).cwday == DateTime.now.cwday  %>" data-day="<%= (date+4).to_s %>"><a href="#">Th</a></li>
+  <li class="<%=  "active"  if (date+5).cwday == DateTime.now.cwday  %>" data-day="<%= (date+5).to_s %>"><a href="#">F</a></li>
+  <li class="<%=  "active"  if (date+6).cwday == DateTime.now.cwday  %>" data-day="<%= (date+1).to_s %>"><a href="#">Sat</a></li>
 </ul>
 
 <h4 class="center-text underline">Leaderboard</h4>

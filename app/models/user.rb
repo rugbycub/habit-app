@@ -4,6 +4,8 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
+  has_one :profile
+
   has_many :friendships, :foreign_key => 'user_id', 
                          :class_name  => "Friendship"
   has_many :friends, :through => :friendships
@@ -36,4 +38,5 @@ class User < ActiveRecord::Base
 
   # def clean_phone_attribute
   # end
+
 end

@@ -1,6 +1,6 @@
-class CreateEntries < ActiveRecord::Migration
+class CreateCompletions < ActiveRecord::Migration
   def change
-    create_table :entries do |t|
+    create_table :completions do |t|
       t.boolean :status
       t.integer :habit_id
 

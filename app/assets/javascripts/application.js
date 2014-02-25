@@ -21,9 +21,13 @@
 $(function(){
 
   $('#post').on('click', function(event){
-    var params = {}
-    params.post = {body: $('.form_control').val() }
-  })
+    var params = {};
+    params.post = {body: $('.form-control').val() };
+    params.name = $('.form-control').data().name
+
+    $('.posts').append('<h4>' + params.post.body + '</h4>') // this will be a handle bar template
+  
+  });
 
   $('.nav').on('click', 'li' ,function(event){
     event.preventDefault();

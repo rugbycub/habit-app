@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140225170754) do
+ActiveRecord::Schema.define(version: 20140225213041) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -21,7 +21,7 @@ ActiveRecord::Schema.define(version: 20140225170754) do
     t.integer  "habit_id"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.datetime "date"
+    t.date     "date"
   end
 
   create_table "friendships", force: true do |t|
@@ -53,6 +53,7 @@ ActiveRecord::Schema.define(version: 20140225170754) do
   create_table "points", force: true do |t|
     t.integer  "user_id"
     t.integer  "pointable_id"
+    t.string   "pointable_type"
     t.integer  "action_id"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -61,6 +62,17 @@ ActiveRecord::Schema.define(version: 20140225170754) do
   create_table "points_actions", force: true do |t|
     t.string   "action_name"
     t.integer  "points_value"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "posts", force: true do |t|
+    t.integer  "user_id"
+    t.integer  "postable_id"
+    t.string   "postable_type"
+    t.integer  "upvotes"
+    t.integer  "downvotes"
+    t.text     "body"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

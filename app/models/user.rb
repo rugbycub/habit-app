@@ -29,6 +29,7 @@ class User < ActiveRecord::Base
 
   # validates_format_of :phone, :with =>  number_regex, :message => "Only positive number without spaces are allowed"
 
+  has_many :points,  as: :pointable, :through => :habits
 
 
   # private

@@ -1,0 +1,15 @@
+
+<div class="container">
+  <h2>Finish Profile</h2>
+  <h5>You're almost there!</h5>
+  <div>
+    <%= form_for @profile do |f| %>
+      <div><%= f.label "Tagline" %><br>
+      <%= f.text_field :tagline, value: :tagline %>
+      <div><%= f.label "Choose New Profile Picture" %><br>
+      <%= f.file_field :profile_pic %></div>
+      <%= f.submit "Finish Profile", :class => "btn btn-primary" %>
+    <% end %>
+    <%= link_to "Skip This", habits_path %>
+  </div>
+</div>

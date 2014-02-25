@@ -13,4 +13,24 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
+//= require handlebars
+//= require_tree ./templates
 //= require_tree .
+
+
+$(function(){
+
+  $('.active').on('click',function(event){
+    event.preventDefault();
+    var parent = $(this).closest('ul');
+    var params = {name: parent.data().name};
+    if ( $(this).hasClass('completed') ){
+      $(this).removeClass('completed');
+      $.ajax({type: 'delete', url: "/completions", data: params}).done(function(r){ alert("Deleted the completion"); }).fail(function(r){ alert("You Failed"); });
+    } else {
+      $(this).addClass('completed');
+      $.ajax({type: 'post', url: "/completions", data: params}).done(function(r){ alert("Congratualtions"); }).fail(function(r){ alert("You Failed"); });
+    }
+  });
+
+});

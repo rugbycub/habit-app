@@ -1,6 +1,5 @@
 class Habit < ActiveRecord::Base
-    belongs_to :user, :foreign_key => "user_id",
-                      :class_name  => "User"
+    belongs_to :user
 
-    has_many :entries
+    has_many :completions
 end

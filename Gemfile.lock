@@ -66,6 +66,11 @@ GEM
       mime-types (~> 1.18)
     execjs (2.0.2)
     ffi (1.9.3)
+    handlebars_assets (0.15)
+      execjs (>= 1.2.9)
+      multi_json
+      sprockets (>= 2.0.3)
+      tilt
     hike (1.2.3)
     httpi (2.1.0)
       rack
@@ -220,6 +225,7 @@ DEPENDENCIES
   coffee-rails (~> 4.0.0)
   devise
   dotenv-rails
+  handlebars_assets
   jbuilder (~> 1.2)
   jquery-rails
   json

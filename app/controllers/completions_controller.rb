@@ -29,7 +29,7 @@ class CompletionsController < ApplicationController
     last = first + 6
     completions = habit.completions.where("date > ? AND date < ?", first-1, last+1)
     respond_to do |f|
-      f.json { render json: completions.to_json }
+      f.json { render json: {date: first,completions: completions.as_json} }
     end
   end
 

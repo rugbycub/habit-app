@@ -1,52 +1,52 @@
   <div class="section-head">
       <h2 class="center-text">Profile</h2>
   </div>
-          
-          <div class="pic">
-            <% if @profile.profile_pic.nil? %>
-              <div class="first-event">
-                <p>I'm shy</p>
-              </div>
-            <% else %>
-              <div class="photo">
-                <%= image_tag @profile.profile_pic.url(:square) %>
-              </div>
-            <% end %>
+  
+  <div class="row">  
+    <div class="col-sm-4 col-lg-3">  
+      <div class="center-text">
+        <% if @profile.profile_pic.nil? %>
+          <div class="first-event">
+            <p>I'm shy</p>
           </div>
-        <div class="habit-row">
-          <div class="blue-top"></div>
-            <div>
-              <h3 class="habit-title">
-                <%= @current_user.first_name %> <%= @current_user.last_name %>
-              </h3>
-            </div>
-            <div>
-              <% unless @profile.tagline.nil? %>
-                <h5 class="frequency">
-                  <%= @profile.tagline %>
-                </h5>
-              <% end %>
-            </div>
-        </div> 
+        <% else %>
+          <div class="photo">
+            <%= image_tag @profile.profile_pic.url(:square) %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+        
+    <div class="col-sm-8 col-lg-9">    
+      <div class="habit-row">
+        <div class="blue-top"></div>
+          <div class="left">
+            <h3 class="habit-title">
+              <%= @current_user.first_name %> <%= @current_user.last_name %>
+            </h3>
+            <% unless @profile.tagline.nil? %>
+              <h5 class="frequency">
+                <%= @profile.tagline %>
+              </h5>
+            <% end %>
+          </div> 
 
-        <div class="habit-row">
-          <div class="blue-top"></div>
-               
-            <h2>
+          <div class="right">
+            <h4 class="habit-title">
               <% if @current_user.habits.count.nil? %>
-                <%= No %>
+                0
               <% else %> 
                 <%= @current_user.habits.count %>
               <% end %>
-              Habits
-              </h
-              <span class="right-text">
+              Total Habits
                 <%= render "habits/add_habit" %>
-              </span>
-            </div>
-            </h2><br>
-            <h2>
-              [POINTS GO HERE] Points
-            </h2>
+            </h4>
+            <h4>
+              Points
+            </h4>
           </div>
         </div>
+      </div>
+    </div>
+  </div>
+

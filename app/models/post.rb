@@ -3,6 +3,6 @@ class Post < ActiveRecord::Base
 
   has_many :posts, as: :postable
   
-  has_one :user
+  belongs_to :user
 
 end

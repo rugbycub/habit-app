@@ -24,10 +24,18 @@ $(function(){
     for ( var i = 0; i < completions.length; i++ ){
       var day = Date.parse(completions[i].date);
       day = new Date(day);
-      day.setDate(day.getDate()-1)
+      day.setDate(day.getDate()-1);
       if ( day.getDate() === date.getDate() ){
         return true;
       }
+    }
+    return false;
+  }
+
+  function include_active(date, current_date){
+    current_date.setDate(current_date.getDate()-1);
+    if (current_date.getDate() == date.getDate()){
+      return true;
     }
     return false;
   }
@@ -53,7 +61,7 @@ $(function(){
         if (include_completions(d, response.completions)){
           list += "completed ";
         }
-        if ( d.getDate() === new Date().getDate() ){
+        if ( include_active(d, new Date()) ){
           list += "active ";
         }
 
@@ -100,7 +108,7 @@ $(function(){
         if (include_completions(d, response.completions)){
           list += "completed ";
         }
-        if ( d.getDate() === new Date().getDate() ){
+        if ( include_active(d, new Date()) ){
           list += "active ";
         }
 

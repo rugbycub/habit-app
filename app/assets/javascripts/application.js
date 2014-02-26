@@ -34,6 +34,7 @@ $(function(){
 
   $('.nav').on('click', 'li' ,function(event){
     event.preventDefault();
+
     var d = Date.parse(this.dataset.day);
     var day = new Date(d);
      if (day < new Date()){
@@ -60,3 +61,17 @@ $(function() {
     }   
   });  
 });  
+
+$(function(){
+  var freqs = $('.frequency');
+  var total, freq, liWidth;
+  var i = 1;
+  $.each(freqs, function(index, item){
+    total = $('#progress-ul-'+i).width();
+    freq = +($(item).text());
+    liWidth = parseFloat(total)/freq;
+    $('#progress-ul-'+i).children().css('width', liWidth + 'px');
+    i++;
+  });
+});
+

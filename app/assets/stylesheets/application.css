@@ -17,8 +17,13 @@
   font-family: 'Inika', serif;
  }
 
- .btn-add {
+ .btn-glyph {
   background-color: #e5b730;
+ }
+
+ .glyph{
+  width: 12px;
+  height: 12px;
  }
 
  .habit-row {

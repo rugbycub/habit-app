@@ -15,7 +15,7 @@ class User < ActiveRecord::Base
   has_many :habits
 
   has_many :completions, :through => :habits
-  has_many :points,  as: :pointable, :through => :habits
+  has_many :points, :through => :habits
 
 
 end

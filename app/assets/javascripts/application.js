@@ -44,6 +44,7 @@ $(function(){
     event.preventDefault();
     var d = Date.parse($('span.date').data().date);
     d = new Date(d);
+
     var params = {};
     params.date = d.toISOString();
     params.name = $('.form-control').data().name;
@@ -82,7 +83,6 @@ $(function(){
 
       $('ul.nav-pills').empty();
       $('ul.nav-pills').append(list);
-
     });
   });
 
@@ -91,46 +91,49 @@ $(function(){
     var d = Date.parse($('span.date').data().date);
     d = new Date(d);
     d.setDate(d.getDate()+9);
-    var params = {};
-    params.date = d.toISOString();
-    params.name = $('.form-control').data().name;
 
-    $.ajax({type: "post", url: "/previous_week", data: params}).done(function(response){ 
-      var d = Date.parse(response.date);
-      d = new Date(d);
-      d.setDate(d.getDate()-1);
-      var week_day = ["Sun", "M", "Tu", "W", "Th", "F", "Sat"];
-      var list = "";
-      for (var i = 0; i < 7; i++){
+    if (new Date() > d){
+      var params = {};
+      params.date = d.toISOString();
+      params.name = $('.form-control').data().name;
+
+      $.ajax({type: "post", url: "/previous_week", data: params}).done(function(response){ 
+        var d = Date.parse(response.date);
+        d = new Date(d);
+        d.setDate(d.getDate()-1);
+        var week_day = ["Sun", "M", "Tu", "W", "Th", "F", "Sat"];
+        var list = "";
+        for (var i = 0; i < 7; i++){
+          d.setDate(d.getDate()+1);
+          list += "<li data-day='" + d.toISOString() + "' class='";
+
+          if (include_completions(d, response.completions)){
+            list += "completed ";
+          }
+          if ( include_active(d, new Date()) ){
+            list += "active ";
+          }
+
+          list +="' ><a href='#'>" + week_day[i] + "</a></li>";
+        }
+
+        var d = Date.parse(response.date);
+        d = new Date(d);
+
+        //<span class="section-title date" data-date="2/23/2014">Week of 2/23/2014</span>
+
+        var header = "<span class='section-title date' data-date='"+ d.toISOString() ;
         d.setDate(d.getDate()+1);
-        list += "<li data-day='" + d.toISOString() + "' class='";
+        header += "' >Week of " + (d.getUTCMonth()+1) +"/"+ d.getDate() +"/"+ d.getUTCFullYear()+"</span>";
 
-        if (include_completions(d, response.completions)){
-          list += "completed ";
-        }
-        if ( include_active(d, new Date()) ){
-          list += "active ";
-        }
+        $('#week-day').empty();
+        $('#week-day').append(header);
 
-        list +="' ><a href='#'>" + week_day[i] + "</a></li>";
-      }
+        $('ul.nav-pills').empty();
+        $('ul.nav-pills').append(list);
 
-      var d = Date.parse(response.date);
-      d = new Date(d);
-
-      //<span class="section-title date" data-date="2/23/2014">Week of 2/23/2014</span>
-
-      var header = "<span class='section-title date' data-date='"+ d.toISOString() ;
-      d.setDate(d.getDate()+1);
-      header += "' >Week of " + (d.getUTCMonth()+1) +"/"+ d.getDate() +"/"+ d.getUTCFullYear()+"</span>";
-
-      $('#week-day').empty();
-      $('#week-day').append(header);
-
-      $('ul.nav-pills').empty();
-      $('ul.nav-pills').append(list);
-
-    });
+      });
+    }
   });
 
   $('#post').on('click', function(event){

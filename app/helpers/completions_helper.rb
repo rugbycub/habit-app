@@ -1,7 +1,7 @@
 module CompletionsHelper
   def completed?(completions, date)
     completions.each do |completion|
-      if completion.date == date
+      if completion.date.day == date.day
         return true
       end
     end

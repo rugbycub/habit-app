@@ -27,6 +27,7 @@ class CompletionsController < ApplicationController
     d = Date.parse(params[:date])
     first = d.beginning_of_week - 1
     last = first + 6
+  
     completions = habit.completions.where("date > ? AND date < ?", first-1, last+1)
     respond_to do |f|
       f.json { render json: {date: first,completions: completions.as_json} }

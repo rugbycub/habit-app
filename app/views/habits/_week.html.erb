@@ -1,7 +1,7 @@
-<%= link_to content_tag(:span, nil, {class: 'glyphicon glyphicon-chevron-left'}), "#" %>
+<%= link_to content_tag(:span, nil, {class: 'glyphicon glyphicon-chevron-left previous'}), "#" %>
 
 <% start_of_week = (DateTime.now.beginning_of_week - 1).strftime("%-m/%-d/%Y") %>
 
-<%= content_tag :span, "Week of #{start_of_week}", class: "section-title" %>
+<span id="week-day"><%= content_tag :span, "Week of #{start_of_week}", class: "section-title date", data: { date: start_of_week.to_s } %></span>
 
-<%= link_to content_tag(:span, nil, {class: 'glyphicon glyphicon-chevron-right'}), "#" %>
+<%= link_to content_tag(:span, nil, {class: 'glyphicon glyphicon-chevron-right next'}), "#" %>

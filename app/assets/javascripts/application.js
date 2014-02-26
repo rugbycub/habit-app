@@ -18,7 +18,7 @@
 //= require_tree .
 
 
-$(function(){
+$(document).ready(function(){
 
   $('#post').on('click', function(event){
     event.preventDefault();
@@ -67,10 +67,10 @@ $(function(){
   var total, freq, liWidth;
   var i = 1;
   $.each(freqs, function(index, item){
-    total = $('#progress-ul-'+i).width();
+    //total = $('#progress-ul-'+i).width();
     freq = +($(item).text());
-    liWidth = parseFloat(total)/freq;
-    $('#progress-ul-'+i).children().css('width', liWidth + 'px');
+    //liWidth = parseFloat(total)/freq;
+    $('#progress-ul-'+i).children().css('width', liWidth + '%');
     i++;
   });
 });

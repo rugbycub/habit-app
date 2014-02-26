@@ -914,7 +914,12 @@ task600 = Habit.create( name: "write for 10 minutes", category: "Mental Fitness"
 
 
 #Completion Seed Data
-1000.times {Completion.create(status: true, habit_id: (rand(1..600)), created_at: (rand(1.year).ago))}
+1000.times do
+  habit = Habit.find(rand(1..600))
+  Completion.create(status: true, habit_id: habit.id, created_at: (rand(1.year).ago))
+end
+
+
 
 
 

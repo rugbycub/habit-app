@@ -11,12 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 20140225213041) do
-=======
-
-ActiveRecord::Schema.define(version: 20140225183402) do
->>>>>>> 8c8550d11b2ae81aa97ed77e1870954651800804
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -71,7 +66,6 @@ ActiveRecord::Schema.define(version: 20140225183402) do
     t.datetime "updated_at"
   end
 
-<<<<<<< HEAD
   create_table "posts", force: true do |t|
     t.integer  "user_id"
     t.integer  "postable_id"
@@ -83,7 +77,6 @@ ActiveRecord::Schema.define(version: 20140225183402) do
     t.datetime "updated_at"
   end
 
-=======
   create_table "profiles", force: true do |t|
     t.text     "tagline"
     t.integer  "user_id"
@@ -97,7 +90,6 @@ ActiveRecord::Schema.define(version: 20140225183402) do
 
   add_index "profiles", ["user_id"], name: "index_profiles_on_user_id", using: :btree
 
->>>>>>> 8c8550d11b2ae81aa97ed77e1870954651800804
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false

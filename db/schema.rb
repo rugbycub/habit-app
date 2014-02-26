@@ -53,6 +53,7 @@ ActiveRecord::Schema.define(version: 20140225213041) do
   create_table "points", force: true do |t|
     t.integer  "user_id"
     t.integer  "pointable_id"
+    t.string   "pointable_type"
     t.integer  "action_id"
     t.datetime "created_at"
     t.datetime "updated_at"

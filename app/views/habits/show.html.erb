@@ -37,4 +37,9 @@
 <button id="post" type="button" class="btn btn-default">Add!</button>
 
 <div class="posts">
+  <% @posts.each do |post| %>
+    <div>
+      <h4><%= post.body %> by <%= "#{post.user.first_name} #{post.user.last_name}" %></h4>  
+    </div>
+  <% end %>
 </div>

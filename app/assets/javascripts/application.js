@@ -25,8 +25,10 @@ $(function(){
     var params = {};
     params.post = {body: $('.form-control').val() };
     params.name = $('.form-control').data().name;
-    // $.ajax({type: 'post', url: "/posts", data: params }).done(function(response){}); the ajax call
-    $('.posts').append('<h4>' + params.post.body + '</h4>'); // this will be a handle bar template;
+    $.ajax({type: 'post', url: "/posts", data: params }).done(function(response){
+      var element = "<h4>" + response.post.body + " by "+ response.post.user.first_name + " " + response.post.user.last_name + "</h4>"
+      $('.posts').append(element) 
+    }); 
 
     $('.form-control').val("") 
   

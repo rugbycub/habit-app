@@ -31,8 +31,9 @@ $(function(){
     return false;
   }
 
-  $('.date').on('click', function(event){
-    var d = Date.parse($('.date').data().date);
+  $('span.previous').on('click', function(event){
+    event.preventDefault();
+    var d = Date.parse($('span.date').data().date);
     d = new Date(d);
     var params = {};
     params.date = d.toISOString();
@@ -41,7 +42,7 @@ $(function(){
     $.ajax({type: "post", url: "/previous_week", data: params}).done(function(response){ 
       var d = Date.parse(response.date);
       d = new Date(d);
-      d.setDate(d.getDate()-1)
+      d.setDate(d.getDate()-1);
       var week_day = ["Sun", "M", "Tu", "W", "Th", "F", "Sat"];
       var list = "";
       for (var i = 0; i < 7; i++){
@@ -61,12 +62,14 @@ $(function(){
       var d = Date.parse(response.date);
       d = new Date(d);
 
-      var header = "<h4 class='center-text date' data-date='"+ d.toISOString() ;
-      d.setDate(d.getDate()+1);
-      header += "' >Week of " + (d.getUTCMonth()+1) +"/"+ d.getDate() +"/"+ d.getUTCFullYear();
+      //<span class="section-title date" data-date="2/23/2014">Week of 2/23/2014</span>
 
-      $('h4.date').remove()
-      $('div.date-div').append(header)
+      var header = "<span class='section-title date' data-date='"+ d.toISOString() ;
+      d.setDate(d.getDate()+1);
+      header += "' >Week of " + (d.getUTCMonth()+1) +"/"+ d.getDate() +"/"+ d.getUTCFullYear()+"</span>";
+
+      $('#week-day').empty()
+      $('#week-day').append(header)
 
       $('ul.nav-pills').empty();
       $('ul.nav-pills').append(list);

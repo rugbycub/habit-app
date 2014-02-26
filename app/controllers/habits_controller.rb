@@ -2,7 +2,7 @@ class HabitsController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    
+      
     @habits = current_user.habits # TODO where habit is active
 
     respond_to do |f|
@@ -25,14 +25,13 @@ class HabitsController < ApplicationController
   end
 
   def create
-    user = User.find(current_user.id)
     params.require(:habit).permit!
-    @habit = user.habits.new(params[:habit])
+    @habit = current_user.habits.new(params[:habit])
     if @habit.save
-      redirect_to "habits#show"
+      redirect_to habit_path(@habit.id)
     else
       @title = "New Habit"
-      render = 'new'
+      render :new
     end
   end
 

@@ -118,13 +118,12 @@ $(function() {
 
 $(function(){
   var freqs = $('.frequency');
-  var total, freq, liWidth;
+  var freq, liWidth;
   var i = 1;
   $.each(freqs, function(index, item){
-    total = $('#progress-ul-'+i).width();
     freq = +($(item).text());
-    liWidth = parseFloat(total)/freq;
-    $('#progress-ul-'+i).children().css('width', liWidth + 'px');
+    liWidth = 100.0/freq;
+    $('#progress-ul-'+i).children().css('width', liWidth + '%');
     i++;
   });
 });

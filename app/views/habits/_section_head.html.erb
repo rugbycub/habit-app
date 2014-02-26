@@ -3,8 +3,11 @@
   <div class="col-xs-8 col-sm-6 text-center">
     <%= render title %>
   </div>
+  
   <div class="col-xs-2 col-sm-3">
-    <%= render actions %>
+    <% unless actions.nil? %>
+      <%= render actions %>
+    <% end %>
   </div>
   <div style="display: block; clear: both;"></div>
 

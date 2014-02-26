@@ -4,6 +4,8 @@
 
 <% else %>
   <div id="sortable">
+    <% start = DateTime.now.beginning_of_week - 1 %>
+    <% finish = DateTime.now %>
     <% j = 1 %>
     <% @habits.each do |h| %>
       <div class="habit-row ui-state-default">
@@ -11,7 +13,7 @@
         <div>
           <div class="col-xs-5">
             <h3 class="habit-title"><%= link_to h.name, habit_path(h.id) %></h3>
-            <h5><span class="frequency"><%= h.frequency %></span> days per week</h5>
+            <h5><span class="frequency"><%= h.frequency %></span> days this week</h5>
           </div>
           <div class="col-xs-7">
             &nbsp;
@@ -21,12 +23,12 @@
         <div class="col-xs-12">
           <div class="progress-ul" id="progress-ul-<%= j %>">
             <% complete_count = h.completions.where(
-              status: true && h.created_at >= DateTime.now.beginning_of_week - 1 && h.created_at <= DateTime.now).count %>
+              status: true && h.created_at >= start && h.created_at <= finish).count %>
             <% for i in 1..complete_count %>
-               <div class="active"><%= i %></div>
+               <div class="active"></div>
             <% end %>
             <% for i in (complete_count + 1)..h.frequency %>
-               <div class="inactive"><%= i %></div>
+               <div class="inactive"></div>
             <% end %>
           </div>
         </div>

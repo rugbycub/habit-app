@@ -17,8 +17,13 @@
   font-family: 'Inika', serif;
  }
 
- .btn-add {
+ .btn-glyph {
   background-color: #e5b730;
+ }
+
+ .glyph{
+  width: 12px;
+  height: 12px;
  }
 
  .habit-row {
@@ -32,6 +37,15 @@
  .habit-title{
   margin-top: 0px;
  }
+
+ .form-row {
+  margin-top: 20px;
+ }
+
+ .inline-label {
+  margin-left: 10px;
+ }
+
 .section-head {
     background-color: #f5d453;
     color: #526170;
@@ -39,6 +53,7 @@
     font-size: 20px;
     padding-right: 2%;
 }
+
 .first-event {
   height: 150px;
   padding-top: 50px;
@@ -84,13 +99,14 @@
   padding-left: 0px;
   width: 100%;
   display: block;
+  margin: 15px 0 30px 0;
 }
 
 .progress-ul div {
   font-size: 12px;
   padding: 2px;
   border: solid 1px lightgrey;
-  width: 20px;
+  height: 10px;
   display: block;
   float: left;
   text-align: center;
@@ -108,10 +124,10 @@
 }
 
 .progress-ul .active{
-  background-color: black;
+  background-color: #48c043;
 }
 .progress-ul .inactive{
-  background-color: yellow;
+  background-color: #e9e9e9;
 }
 
 .ui-sortable-placeholder {  
@@ -120,12 +136,6 @@
     background: #ccc;
     margin: 10px 0;
 }  
-
-.move{
-  background-color: #f5d453;
-  padding: 8px 12px;
-  vertical-align: middle;
-}
 
 @media(max-width: 500px) {
   .section-head{

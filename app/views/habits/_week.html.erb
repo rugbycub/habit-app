@@ -1,5 +1,7 @@
-<%= link_to content_tag(:span, nil, {class: 'glyphicon glyphicon-chevron-left'}), new_habit_path %>
+<%= link_to content_tag(:span, nil, {class: 'glyphicon glyphicon-chevron-left'}), "#" %>
 
-<span "section-title">Week of <%= (DateTime.now.beginning_of_week - 1).strftime("%-m/%-d/%Y")  %></span>
+<% start_of_week = (DateTime.now.beginning_of_week - 1).strftime("%-m/%-d/%Y") %>
 
-<%= link_to content_tag(:span, nil, {class: 'glyphicon glyphicon-chevron-right'}), new_habit_path %>
+<%= content_tag :span, "Week of #{start_of_week}", class: "section-title" %>
+
+<%= link_to content_tag(:span, nil, {class: 'glyphicon glyphicon-chevron-right'}), "#" %>

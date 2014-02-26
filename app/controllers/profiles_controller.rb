@@ -11,7 +11,7 @@ before_action :authenticate_user!
     @user = current_user
     profile = @user.build_profile(profile_params)
     if profile.save
-      redirect_to profile_path
+      redirect_to habits_path
     else
       redirect_to add_profile_path
     end

@@ -1,4 +1,5 @@
 class ProfilesController < ApplicationController
+
 before_action :authenticate_user!
 
   def new
@@ -30,6 +31,6 @@ before_action :authenticate_user!
   end
 
   def profile_params
-    params.require(:profile).permit(:tagline, :profile_photo)
+    params.require(:profile).permit(:tagline, :profile_pic)
   end
 end

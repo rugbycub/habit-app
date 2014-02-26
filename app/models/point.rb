@@ -1,4 +1,5 @@
 class Point < ActiveRecord::Base
   belongs_to :pointable, polymorphic: true
-  belongs_to :points_action
+  has_one :points_action, :foreign_key => "id",
+                          :class_name  => "PointsAction"
 end

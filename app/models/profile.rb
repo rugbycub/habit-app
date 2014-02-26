@@ -2,7 +2,7 @@ class Profile < ActiveRecord::Base
 
   belongs_to :user
 
-  has_attached_file :profile_pic, dependent: :destroy, styles: {
+  has_attached_file :profile_pic, styles: {
     thumb: '100x100>',
     square: '200x200#',
     medium: '300x300>'

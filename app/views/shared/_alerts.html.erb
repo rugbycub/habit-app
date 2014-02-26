@@ -1,3 +1,4 @@
+<% unless instance.errors.nil? || instance.errors.empty? %>
 <div class="alert alert-danger">
   <strong>Whoops! Make <%= pluralize(instance.errors.count, "change")%>:</strong>
   <ul>
@@ -6,3 +7,4 @@
     <% end %>
   <ul>
 </div>
+<% end %>

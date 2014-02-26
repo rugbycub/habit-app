@@ -5,4 +5,8 @@ def get_freq(freq, my_date)
   month_size < freq ? month_size : freq
 end
 
+def days_of_week
+  ["Su", "M", "Tu", "W", "Th", "F", "Sa"]
+end
+
 end

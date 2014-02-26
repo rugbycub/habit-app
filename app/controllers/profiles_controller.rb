@@ -1,4 +1,5 @@
 class ProfilesController < ApplicationController
+
 before_action :authenticate_user!
 
   def new
@@ -10,7 +11,7 @@ before_action :authenticate_user!
     @user = current_user
     profile = @user.build_profile(profile_params)
     if profile.save
-      redirect_to profile_path
+      redirect_to habits_path
     else
       redirect_to add_profile_path
     end
@@ -30,6 +31,6 @@ before_action :authenticate_user!
   end
 
   def profile_params
-    params.require(:profile).permit(:tagline, :profile_photo)
+    params.require(:profile).permit(:tagline, :profile_pic)
   end
 end

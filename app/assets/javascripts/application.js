@@ -22,9 +22,10 @@ $(function(){
 
   function include_completions(date, completions){
     for ( var i = 0; i < completions.length; i++ ){
-      var d = Date.parse(completions[i].date);
-      d = new Date(d);
-      if ( d.getDate() === date.getDate() ){
+      var day = Date.parse(completions[i].date);
+      day = new Date(day);
+      day.setDate(day.getDate()-1)
+      if ( day.getDate() === date.getDate() ){
         return true;
       }
     }

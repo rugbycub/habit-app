@@ -5,8 +5,8 @@ class PostsController < ApplicationController
     user = current_user
     habit = user.habits.find_by_name(params[:name])
 
-    post = user.create_post(params[:post])
-    post.habit_id = habit.id
+    post = habit.posts.create(params[:post])
+    post.user_id = user.id
     post.save
 
     respond_to do |f|

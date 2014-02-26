@@ -2,7 +2,6 @@ class HabitsController < ApplicationController
   before_action :authenticate_user!
 
   def index
-      
     @habits = current_user.habits # TODO where habit is active
 
     respond_to do |f|
@@ -15,6 +14,8 @@ class HabitsController < ApplicationController
     @habit = Habit.find(params[:id])
     @completions = @habit.completions.where( "date > ? AND date < ? ", Date.today.beginning_of_week-2,Date.today+1 )
     @posts = @habit.posts.order(created_at: :desc).limit(5).reverse
+    @sunday = Date.today.beginning_of_week - 1
+
     respond_to do |f|
       f.html
       f.json { render json: @habit.to_json }

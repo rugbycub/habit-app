@@ -1,4 +1,5 @@
 class PointsAction < ActiveRecord::Base
-  belongs_to :point
-  
+  has_many :points , :foreign_key => "action_id",
+                     :class_name  => "Point"
+    
 end

@@ -3,6 +3,7 @@ HabitApp::Application.routes.draw do
 
   root :to => "welcome#index"
   resources :habits
+  resources :posts
 
   post "/completions", to: "completions#create"
   delete "/completions", to: "completions#destroy"

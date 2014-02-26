@@ -80,16 +80,28 @@
   margin-bottom: 10px
 }
 
-.progress-li{
+.progress-ul{
+  padding-left: 0px;
+  width: 41.6666667%;
+  display: block;
+}
+
+.progress-ul div{
   font-size: 12px;
   padding: 2px;
   border: solid 1px lightgrey;
   width: 20px;
   display: block;
   float: left;
-  text-align: center
+  text-align: center;
+  display: inline-block;
 }
-
+.progress-ul .active{
+  background-color: black;
+}
+.progress-ul .inactive{
+  background-color: yellow;
+}
 .form-row p {
   
 }

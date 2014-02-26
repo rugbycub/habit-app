@@ -6,7 +6,7 @@
 
 <h2>Public</h2>
 
-<div class="underline">
+<div class="underline date-div">
   <button type="button" class="btn btn-default right">SMS Reminders</button>
   <% date = Date.today.beginning_of_week - 1 %>
   <h4 class="center-text date" data-date='<%= Date.today.beginning_of_week-1  %>'><%= date.strftime('Week of %-m/%-d/%Y') %></h4>

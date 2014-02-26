@@ -58,6 +58,16 @@ $(function(){
         list +="' ><a href='#'>" + week_day[i] + "</a></li>";
       }
 
+      var d = Date.parse(response.date);
+      d = new Date(d);
+
+      var header = "<h4 class='center-text date' data-date='"+ d.toISOString() ;
+      d.setDate(d.getDate()+1);
+      header += "' >Week of " + (d.getUTCMonth()+1) +"/"+ d.getDate() +"/"+ d.getUTCFullYear();
+
+      $('h4.date').remove()
+      $('div.date-div').append(header)
+
       $('ul.nav-pills').empty();
       $('ul.nav-pills').append(list);
 

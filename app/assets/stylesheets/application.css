@@ -40,11 +40,16 @@
 
  .form-row {
   margin-top: 20px;
+  line-height: 35px;
  }
 
+ .inline-row{
+  margin-bottom: -10px;
+ }
  .inline-label {
   margin-left: 10px;
  }
+
 
 .section-head {
     background-color: #f5d453;

@@ -1,32 +1,32 @@
 <%= form_for @habit do |f| %>
+   <%= render partial: 'shared/alerts', locals: {instance: @habit} %>
   <div class="row form-row">
     <div class="col-sm-6 col-xs-12">
       <%= f.text_field :name, :autofocus => true, class: "form-control", placeholder:"Title your habit" %>
     </div>
   </div>
-  <div class="row form-row">
+  <div class="row form-row inline-row">
     <div class="col-sm-2 col-xs-4">
-      <%= f.select(:frequency, [1,2,3,4,5,6,7], {}, { :class => 'form-control input-sm span2' }) %>
+      <%= f.text_field :frequency, class: "form-control", placeholder:"3" %>
     </div>
-    <div class="col-sm-10 col-xs-8 bottom">
-      <p>days per <span class="inline-label">
-            <%= radio_button_tag(:timeframe, "week", true) %>
-            <%= label_tag(:timeframe_week, "Week") %>
+    <div class="col-sm-10 col-xs-8">
+      days per <span class="inline-label">
+            <%= f.radio_button(:timeframe, "week", checked: true) %>
+            <%= f.label(:timeframe_week, "Week") %>
           </span>
           <span class="inline-label">
-            <%= radio_button_tag(:timeframe, "month", false) %>
-            <%= label_tag(:timeframe_month, "Month") %>
+            <%= f.radio_button(:timeframe, "month") %>
+            <%= f.label(:timeframe_month, "Month") %>
           </span>
-      </p>
     </div>
   </div>
   <div class="row form-row">
-    <div class="col-xs-12 bottom">
-        <%= radio_button_tag(:visibility, "public", true) %>
-        <%= label_tag(:visibility_public, "Public") %>
+    <div class="col-xs-12">
+        <%= f.radio_button(:visibility, "public", checked: true) %>
+        <%= f.label(:visibility_public, "Public") %>
       <span class="inline-label">
-        <%= radio_button_tag(:visibility, "private", false) %>
-        <%= label_tag(:visibility_private, "Private") %>
+        <%= f.radio_button(:visibility, "private") %>
+        <%= f.label(:visibility_private, "Private") %>
       </span>
     </div>
   </div>

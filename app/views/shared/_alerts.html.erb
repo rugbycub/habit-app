@@ -1,0 +1,8 @@
+<div class="alert alert-danger">
+  <strong>Whoops! Make <%= pluralize(instance.errors.count, "change")%>:</strong>
+  <ul>
+    <% instance.errors.keys.each do |key| %>
+      <li><%= instance.errors[key].first %></li>
+    <% end %>
+  <ul>
+</div>

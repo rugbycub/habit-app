@@ -13,7 +13,7 @@
         <div>
           <div class="col-xs-5">
             <h3 class="habit-title"><%= link_to h.name, habit_path(h.id) %></h3>
-            <h5><span class="frequency"><%= h.frequency %></span> days this week</h5>
+            <h5><span class="frequency"><%= get_freq(h.frequency, start) %></span> days this <%= h.timeframe %></h5>
           </div>
           <div class="col-xs-7">
             &nbsp;

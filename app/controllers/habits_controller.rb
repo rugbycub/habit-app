@@ -26,12 +26,11 @@ class HabitsController < ApplicationController
   end
 
   def create
-    params.require(:habit).permit!
-    @habit = current_user.habits.new(params[:habit])
+    @habit = current_user.habits.new(get_habit_params)
+    
     if @habit.save
       redirect_to habit_path(@habit.id)
     else
-      @title = "New Habit"
       render :new
     end
   end
@@ -44,6 +43,12 @@ class HabitsController < ApplicationController
       f.html { redirect_to action: :index }
       f.json { render json: habit.to_json }
     end
+  end
+
+  private
+
+  def get_habit_params
+    params.require(:habit).permit(:name, :frequency, :timeframe, :visibility)
   end
 
 end

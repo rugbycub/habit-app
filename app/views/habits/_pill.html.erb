@@ -1,0 +1,6 @@
+<% @pills = ["Su", "M", "Tu", "W", "Th", "F", "Sa"] %>
+<% i = 0 %>
+<% @pills.each do |pill| %>
+  <li class="<%= "active" if (date+i).cwday == Date.today.cwday %> <%=  "completed" if completed?(@completions, date+i) %>" data-day="<%= (date+i).to_s %>"><%=link_to pill, "#" %></li>
+  <% i += 1 %>
+<% end %>

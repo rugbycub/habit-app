@@ -1,4 +1,4 @@
 class PointsAction < ActiveRecord::Base
-  belongs_to :points
-  
+  has_one :point
+    
 end

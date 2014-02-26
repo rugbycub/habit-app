@@ -1,17 +1,8 @@
-<% f_types = [:info, :warning, :success, :danger, :notice, :alert] %>
-
-<% f_types.each do |f| %>
-  
-  <% if flash[f] %>
-    <% if f == :notice %>
-      <div class="alert alert-info">
-    <% elsif f == :alert %>
-      <div class="alert alert-warning">
-    <% else %>
-      <div class="alert alert-<%= f.to_s %>">
+<div class="alert alert-danger">
+  <strong>Whoops! Make <%= pluralize(instance.errors.count, "change")%>:</strong>
+  <ul>
+    <% instance.errors.keys.each do |key| %>
+      <li><%= instance.errors[key].first %></li>
     <% end %>
-    <%= flash[f] %>
-    </div>
-  <% end %>
-    
-  <% end %>
+  <ul>
+</div>

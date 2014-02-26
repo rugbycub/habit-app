@@ -1,5 +1,5 @@
 <%= form_for @habit do |f| %>
-  <%= f.error_messages %>
+   <%= render partial: 'shared/alerts', locals: {instance: @habit} %>
   <div class="row form-row">
     <div class="col-sm-6 col-xs-12">
       <%= f.text_field :name, :autofocus => true, class: "form-control", placeholder:"Title your habit" %>

@@ -20,6 +20,18 @@
 
 $(function(){
 
+  $('.date').on('click', function(event){
+    var d = Date.parse($('.date').data().date);
+    d = new Date(d);
+    var params = {};
+    params.date = d.toISOString();
+    params.name = $('.form-control').data().name;
+
+    $.ajax({type: "post", url: "/previous_week", data: params}).done(function(response){ 
+      alert('success!'); 
+    });
+  });
+
   $('#post').on('click', function(event){
     event.preventDefault();
     var params = {};
@@ -28,7 +40,7 @@ $(function(){
     // $.ajax({type: 'post', url: "/posts", data: params }).done(function(response){}); the ajax call
     $('.posts').append('<h4>' + params.post.body + '</h4>'); // this will be a handle bar template;
 
-    $('.form-control').val("") 
+    $('.form-control').val(""); 
   
   });
 

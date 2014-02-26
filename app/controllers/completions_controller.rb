@@ -22,4 +22,15 @@ class CompletionsController < ApplicationController
     end
   end
 
+  def previous_week
+    habit = current_user.habits.find_by(name: params[:name])
+    d = Date.parse(params[:date])
+    first = d.beginning_of_week - 1
+    last = first + 6
+    completions = habit.completions.where("date > ? AND date < ?", first-1, last+1)
+    respond_to do |f|
+      f.json { render json: completions.to_json }
+    end
+  end
+
 end

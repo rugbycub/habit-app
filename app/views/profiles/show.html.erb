@@ -13,16 +13,25 @@
               </div>
             <% end %>
           </div>
-
-          <div class="blue-top">
-            <h1><%= @current_user.first_name %> <%= @current_user.last_name %></h1><br>
-            <h3>
+        <div class="habit-row">
+          <div class="blue-top"></div>
+            <div>
+              <h3 class="habit-title">
+                <%= @current_user.first_name %> <%= @current_user.last_name %>
+              </h3>
+            </div>
+            <div>
               <% unless @profile.tagline.nil? %>
-                <%= @profile.tagline %></h3>
+                <h5 class="frequency">
+                  <%= @profile.tagline %>
+                </h5>
               <% end %>
-          </div>
+            </div>
+        </div> 
 
-          <div id="stats" class="right">
+        <div class="habit-row">
+          <div class="blue-top"></div>
+               
             <h2>
               <% if @current_user.habits.count.nil? %>
                 <%= No %>
@@ -30,9 +39,14 @@
                 <%= @current_user.habits.count %>
               <% end %>
               Habits
-              <%= render "habits/add_habit" %>
+              </h
+              <span class="right-text">
+                <%= render "habits/add_habit" %>
+              </span>
+            </div>
             </h2><br>
             <h2>
               [POINTS GO HERE] Points
             </h2>
           </div>
+        </div>

@@ -18,7 +18,7 @@
 //= require_tree .
 
 
-$(document).ready(function(){
+$(function(){
 
   $('#post').on('click', function(event){
     event.preventDefault();
@@ -64,12 +64,11 @@ $(function() {
 
 $(function(){
   var freqs = $('.frequency');
-  var total, freq, liWidth;
+  var freq, liWidth;
   var i = 1;
   $.each(freqs, function(index, item){
-    //total = $('#progress-ul-'+i).width();
     freq = +($(item).text());
-    //liWidth = parseFloat(total)/freq;
+    liWidth = 100.0/freq;
     $('#progress-ul-'+i).children().css('width', liWidth + '%');
     i++;
   });

@@ -13,7 +13,7 @@
         <div>
           <div class="col-xs-5">
             <h3 class="habit-title"><%= link_to h.name, habit_path(h.id) %></h3>
-            <h5><span class="frequency"><%= h.frequency >  %></span> days this week</h5>
+            <h5><span class="frequency"><%= h.frequency %></span> days this week</h5>
           </div>
           <div class="col-xs-7">
             &nbsp;
@@ -25,10 +25,10 @@
             <% complete_count = h.completions.where(
               status: true && h.created_at >= start && h.created_at <= finish).count %>
             <% for i in 1..complete_count %>
-               <div class="active"><%= i %></div>
+               <div class="active"></div>
             <% end %>
             <% for i in (complete_count + 1)..h.frequency %>
-               <div class="inactive"><%= i %></div>
+               <div class="inactive"></div>
             <% end %>
           </div>
         </div>

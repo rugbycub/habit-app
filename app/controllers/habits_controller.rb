@@ -2,7 +2,7 @@ class HabitsController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    
+      
     @habits = current_user.habits # TODO where habit is active
 
     respond_to do |f|

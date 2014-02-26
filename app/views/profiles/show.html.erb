@@ -2,25 +2,23 @@
       <h2 class="center-text">Profile</h2>
   </div>
   
-  <div class="row">  
-    <div class="col-sm-4 col-lg-3">  
-      <div class="center-text">
-        <% if @profile.profile_pic.nil? %>
-          <div class="first-event">
-            <p>I'm shy</p>
-          </div>
-        <% else %>
-          <div class="photo">
-            <%= image_tag @profile.profile_pic.url(:square) %>
-          </div>
-        <% end %>
-      </div>
-    </div>
+  
+  <div class="habit-row">
+    <div class="blue-top"></div>
+      <div class="row">
+        <div class="col-sm-4 col-lg-3">  
+            <% if @profile.profile_pic.nil? %>
+              <div class="first-event">
+              </div>
+            <% else %>
+              <div class="photo">
+                <%= image_tag @profile.profile_pic.url(:square) %>
+              </div>
+            <% end %>
+        </div>
         
-    <div class="col-sm-8 col-lg-9">    
-      <div class="habit-row">
-        <div class="blue-top"></div>
-          <div class="left">
+        <div class="col-sm-8 col-lg-9">
+          <div class="detail">   
             <h3 class="habit-title">
               <%= @current_user.first_name %> <%= @current_user.last_name %>
             </h3>
@@ -29,9 +27,7 @@
                 <%= @profile.tagline %>
               </h5>
             <% end %>
-          </div> 
 
-          <div class="right">
             <h4 class="habit-title">
               <% if @current_user.habits.count.nil? %>
                 0
@@ -47,6 +43,5 @@
           </div>
         </div>
       </div>
-    </div>
   </div>
 

@@ -14,8 +14,8 @@ class User < ActiveRecord::Base
 
   has_many :habits
 
-  has_many :completions, :through => :habits
-  has_many :points, :through => :habits
+  #has_many :completions, :through => :habits (commenting out for heroku)
+  #has_many :points, :through => :habits (commenting out for heroku)
 
 
 end

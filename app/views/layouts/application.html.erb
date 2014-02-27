@@ -1,23 +1,19 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>HabitApp</title>
+  <title>Woooo!</title>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
-  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <%= stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
   <link href='http://fonts.googleapis.com/css?family=Inika' rel='stylesheet' type='text/css'>
 </head>
 <body>
-
   <%= render "layouts/navbar" %>
   <div class="container">
     <%= render "layouts/logo" %>
-    <!--[NIKKI] devise: have flash messages in app/views/layouts/application.html.erb. -->
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
     <%= yield %>
-
   </div>
-
 </body>
 </html>

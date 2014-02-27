@@ -20,7 +20,7 @@ body {
 /* HABITS INDEX */
 .habit-row {
   background-color: white;
-  padding: 10px 0px;
+  padding: 30px 15px;
   margin-top: 10px;
   display: inline-block;
   width: 100%;
@@ -37,23 +37,42 @@ body {
   margin-top: 0px;
 }
 
-.first-event {
+.first-habit {
   height: 150px;
-  padding-top: 50px;
+  padding-top: 25px;
   border: 5px dashed grey;
   margin-top: 20px;
   text-align: center;
   background-color: #eeeeee;
+  font-size: 40px;
 }
 
-.first-event:hover{
+.first-habit p {
+  font-size: 30px;
+}
+
+.first-habit:hover{
    background-color: white;
 }
 
 .blue-top {
-  border: 3px #428bca solid;
+  border-top: 3px #428bca solid;
   margin-top: -12px;
   margin-bottom: 10px;
+}
+
+/* HABIT SHOW */
+.habit-show-row{
+  background-color: white;
+  padding: 30px 15px;
+  margin-bottom: 35px;
+
+}
+
+.public-private {
+  color: lightgrey;
+  font-size: 12px;
+  margin-bottom: 20px;
 }
 
 /* HABIT FORM */
@@ -68,6 +87,8 @@ body {
 .inline-label {
   margin-left: 10px;
 }
+
+
 
 /* POSTS */
 .post-row{
@@ -94,7 +115,7 @@ body {
 .post-row{
   padding: 20px 5px;
   background-color: lightgrey;
-  margin: 10px 0 !important;
+  margin: 0 0 20px 0;
 }
 
 .post-area{
@@ -198,6 +219,11 @@ body {
 
 .right-text {
   text-align: right;
+}
+
+.clear {
+  display: block; 
+  clear: both;
 }
 
 @media(max-width: 500px) {

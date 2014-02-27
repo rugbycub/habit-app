@@ -299,7 +299,7 @@ user297 =User.create(first_name: "Paki ", last_name: "Wilkinson", email: "metus.
 user298 =User.create(first_name: "Maxwell", last_name: "Carver ", email: "est.ac.facilisis@malesuadafames.ca ", phone_number: 6833886221 , password: "Changeme1")
 user299 =User.create(first_name: "Porter ", last_name: "Garner ", email: "Nulla.eu.neque@orciPhasellusdapibus.net", phone_number: 2052478817 , password: "Changeme1")
 user300 =User.create(first_name: "Regina", last_name: "Puckett", email: "congue.a.aliquet@tortor.com", phone_number: 7802496074 , password: "Changeme1") 
-
+charlie = User.create(first_name: "Charlie", last_name: "Nuttall", email: "CENuttall@mac.com", phone_number: 4159631246, password: "Changeme1")
 
 
 
@@ -603,6 +603,8 @@ user297.create_profile(tagline: "Test User", reminders: false)
 user298.create_profile(tagline: "Test User", reminders: false)
 user299.create_profile(tagline: "Test User", reminders: false)
 user300.create_profile(tagline: "Test User", reminders: false)
+
+charlie.create_profile(tagline: "Test User", reminders: true)
 
 
 

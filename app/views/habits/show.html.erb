@@ -24,8 +24,15 @@
   </div>
 </div>
 
+
 <%= render partial: 'section_head', locals: {title: 'post_title', actions: nil} %>
 <%= render 'post_area' %>
+<div class="underline center-text">
+  <h3>Posts</h3>
+</div>
+
+<textarea class="form-control" rows="3" data-name="<%= @habit.name %>" data-habit="<%= @habit.id %>"></textarea>
+<button id="post" type="button" class="btn btn-default">Add!</button>
 
 <div class="posts">
   <%= render partial: "post", collection: @posts %>

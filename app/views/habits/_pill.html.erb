@@ -1,7 +1,7 @@
-<ul class="nav nav-pills center-text" data-name="<%= @habit.name %>">
+<ul class="nav nav-pills center-text" data-name="<%= habit.name %>">
 <% i = 0 %>
 <% days_of_week.each do |pill| %>
-  <li class="<%= "active" if (@sunday+i).cwday == Date.today.cwday %> <%=  "completed" if completed?(@completions, @sunday+i) %>" data-day="<%= (@sunday+i).to_s %>"><%=link_to pill, "#" %></li>
+  <li class="<%= "active" if is_today(this_sunday+i) %> <%=  "completed" if completed?(completions, this_sunday+i) %>" data-day="<%= (this_sunday+i).to_s %>"><%=link_to pill, "#" %></li>
   <% i += 1 %>
 <% end %>
 </ul>

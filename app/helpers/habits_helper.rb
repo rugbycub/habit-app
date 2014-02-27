@@ -9,4 +9,13 @@ def days_of_week
   ["Su", "M", "Tu", "W", "Th", "F", "Sa"]
 end
 
+def this_sunday
+  Date.today.beginning_of_week - 1
+end
+
+def is_today(my_date)
+  my_date.cwday == Date.today.cwday &&
+  my_date.cwyear == Date.today.cwyear
+end
+
 end

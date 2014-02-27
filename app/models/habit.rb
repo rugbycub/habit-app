@@ -19,4 +19,7 @@ class Habit < ActiveRecord::Base
       timeframe == "month"
     end
 
+    def this_weeks_completions
+        completions.where( "date > ? AND date < ? ", Date.today.beginning_of_week-2,Date.today+1 )
+    end
 end

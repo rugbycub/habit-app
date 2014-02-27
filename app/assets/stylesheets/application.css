@@ -12,12 +12,8 @@
  *= require_tree .
  */
  
-<<<<<<< HEAD
- body {
-  padding-top: 70px;
-=======
+
 body {
->>>>>>> d786b54a66a243128ce340ae9ccbc3abb6504790
   background-color: #ecf0f1 !important;
   font-family: 'Inika', serif;
 }

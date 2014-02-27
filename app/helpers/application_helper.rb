@@ -1,5 +1,6 @@
 module ApplicationHelper
 include CompletionsHelper
+include HabitsHelper
 
  def resource_name
     :user

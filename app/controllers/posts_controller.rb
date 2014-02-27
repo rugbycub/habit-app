@@ -3,14 +3,17 @@ class PostsController < ApplicationController
 
   def create
     user = current_user
-    habit = user.habits.find_by_name(params[:name])
-
+    habit = Habit.find(params[:habit_id])
     post = habit.posts.create(params[:post].permit(:body))
     post.user_id = user.id
     post.save
 
     respond_to do |f|
-      f.json {render json: {post: post.as_json( include: [ :user ]), profile:  user.profile.as_json } }
+      unless user.profile.nil?
+        f.json {render json: {post: post.as_json( include: [ :user ]), profile_pic: user.profile.profile_pic.url(:thumb).as_json, date: post.created_at.strftime("%-m/%e/%y").as_json } }
+      else
+        f.json {render json: {post: post.as_json( include: [ :user ]), date: post.created_at.strftime("%-m/%e/%y").as_json  } }
+      end
     end
 
   end

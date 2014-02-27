@@ -1,0 +1,6 @@
+runtime "ruby"
+exec "send_reminder.rb"
+name "SendReminder"
+
+gem "twilio-ruby"
+gem "iron_worker_ng"

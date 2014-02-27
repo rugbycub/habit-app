@@ -29,8 +29,7 @@
   </div>
   <div class="col-xs-3">
     <div class="post-author">
-      <% profile_pic = post.user.profile.profile_pic.url(:thumb) %>
-      <% unless profile_pic = "/profile_pics/thumb/missing.png" %>
+      <% unless post.user.profile.nil? %>
         <%= image_tag(post.user.profile.profile_pic.url(:thumb), class: "img-rounded") %>
       <% end %>
       <%= post.user.full_name %>

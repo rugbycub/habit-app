@@ -8,6 +8,11 @@
       <%= f.text_field :tagline, value: :tagline %>
       <div><%= f.label "Choose New Profile Picture" %><br>
       <%= f.file_field :profile_pic %></div>
+      <div><%= f.label "Would you like to receive reminders by text message?"%>
+      <%= f.radio_button(:reminders, true)%>
+      <%= f.label(:reminders_true, "Yes")%>
+      <%= f.radio_button(:reminders, false)%>
+      <%= f.label(:reminders_false, "No")%><br><br></div>
       <%= f.submit "Finish Profile", :class => "btn btn-primary" %>
     <% end %>
     <%= link_to "Skip This", habits_path %>

@@ -20,11 +20,11 @@
   
 </div>
 
-<%= render partial: 'section_head', locals: {title: 'week', actions:'reminders'} %>
+<%= render partial: 'section_head', locals: {title: 'week', actions:'reminders' } %>
 <div class="habit-show-row">
-  <ul class="nav nav-pills center-text" data-name="<%= @habit.name %>">
-    <%= render partial: 'pill', locals: {completions: @completions, habit: @habit} %>
-  </ul>
+
+  <%= render partial: 'pill', locals: {completions: @completions, habit: @habit, j: 0} %>
+
 </div>
 
 <%= render partial: 'section_head', locals: {title: 'leaderboard_title', actions: nil} %>
@@ -35,8 +35,12 @@
   <% end %>
 </div>  
 
+
 <%= render partial: 'section_head', locals: {title: 'post_title', actions: nil} %>
 <%= render 'post_area' %>
+<div class="underline center-text">
+  <h3>Posts</h3>
+</div>
 
 <div class="posts">
   <%= render partial: "post", collection: @posts %>

@@ -1,1 +1,38 @@
-<h4>{{body}} by {{first_name}} {{last_name}}</h4>
+<div>
+  <div class="col-xs-9">
+    <div class="post-body">
+      {{body}}
+    </div>
+    <div class="post-footer">
+      <div class="post-buttons">
+        <div class="post-actions">
+          <a href='#' class="btn btn-success btn-xs">Wooo!</a>
+        </div>
+        <div class="post-actions">
+          <a href="#" class="btn btn-danger btn-xs">Wooo!</a>
+        </div>
+        <div class="post-actions">
+          <a href='#' class="btn btn-default btn-xs">Reply</a>
+        </div>
+        
+        <div class="right post-info">
+          <div class="post-info">
+            <span class="post-date">{{date}}</span>
+          </div>
+          <div class="post-info">
+            <a href='#'><span class="glyphicon glyphicon-trash"></span></a>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+  <div class="col-xs-3">
+    <div class="post-author">
+      {{#if profile_pic }}
+        <img src={{profile_pic}} class="img-rounded"></img>
+      {{/if}}
+      {{full_name}}
+    </div>
+  </div>
+</div>

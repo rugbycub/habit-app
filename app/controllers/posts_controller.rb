@@ -9,7 +9,11 @@ class PostsController < ApplicationController
     post.save
 
     respond_to do |f|
-      f.json {render json: {post: post.as_json( include: [ :user ]), profile: user.profile.as_json } }
+      unless user.profile.nil?
+        f.json {render json: {post: post.as_json( include: [ :user ]), profile_pic: user.profile.profile_pic.url(:thumb).as_json, date: post.created_at.strftime("%-m/%e/%y").as_json } }
+      else
+        f.json {render json: {post: post.as_json( include: [ :user ]), date: post.created_at.strftime("%-m/%e/%y").as_json  } }
+      end
     end
 
   end

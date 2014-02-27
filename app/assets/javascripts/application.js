@@ -58,11 +58,13 @@ $(document).on('ready page:load', function(){
     var params = {};
     params.post = {body: $('.form-control').val() };
     params.name = $('.form-control').data().name;
-    habit_id = $('.form-control').data().habit
+    habit_id = $('.form-control').data().habit;
     $.ajax({type: 'post', url: "/habits/"+ habit_id +"/posts", data: params }).done(function(response){
       var context = { body: response.post.body, 
-                      first_name: response.post.user.first_name, 
-                      last_name: response.post.user.last_name };
+                      full_name: response.post.user.first_name + " " + response.post.user.last_name, 
+                      profile_pic: response.profile_pic,
+                      date: response.date
+                    };
           var template = HandlebarsTemplates.post(context);
       $('.posts').append(template); 
     }); 

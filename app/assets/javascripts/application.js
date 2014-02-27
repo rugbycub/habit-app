@@ -58,7 +58,8 @@ $(document).on('ready page:load', function(){
     var params = {};
     params.post = {body: $('.form-control').val() };
     params.name = $('.form-control').data().name;
-    $.ajax({type: 'post', url: "/posts", data: params }).done(function(response){
+    habit_id = $('.form-control').data().habit
+    $.ajax({type: 'post', url: "/habits/"+ habit_id +"/posts", data: params }).done(function(response){
       var context = { body: response.post.body, 
                       first_name: response.post.user.first_name, 
                       last_name: response.post.user.last_name };

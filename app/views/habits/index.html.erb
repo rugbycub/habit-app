@@ -24,6 +24,7 @@
           <div class="progress-ul" id="progress-ul-<%= j %>">
             <% complete_count = h.completions.where(
               status: true && h.created_at >= start && h.created_at <= finish).count %>
+            <% complete_count = h.frequency if complete_count > h.frequency %>
             <% for i in 1..complete_count %>
                <div class="active"></div>
             <% end %>

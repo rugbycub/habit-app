@@ -62,8 +62,12 @@ gem 'paperclip'
 #[NIKKI] gem for aws, using with paperclip
 gem 'aws-sdk'
 
+#[CHARLIE] gem for IronWorkers for Trillio Scheduling
+gem 'iron_worker_ng'
+
 group :development, :test do
   gem 'rspec-rails', '~> 3.0.0.beta'
   gem 'better_errors'
+  gem 'binding_of_caller'
 end
 

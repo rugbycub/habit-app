@@ -7,31 +7,34 @@
 <h2>Public</h2>
 
 <%= render partial: 'section_head', locals: {title: 'week', actions:'reminders'} %>
+<div class="habit-row">
+  <ul class="nav nav-pills center-text" data-name="<%= @habit.name %>">
+    <%= render partial: 'pill', locals: {completions: @completions, habit: @habit} %>
+  </ul>
+</div>
 
+<<<<<<< HEAD
 <ul class="nav nav-pills center-text" data-name="<%= @habit.name %>">
   <%= render partial: 'pill', locals: {completions: @completions, habit: @habit, j: 0} %>
 </ul>
 
 
 <h4 class="center-text underline">Leaderboard</h4>
+=======
+<%= render partial: 'section_head', locals: {title: 'leaderboard_title', actions: nil} %>
+>>>>>>> d786b54a66a243128ce340ae9ccbc3abb6504790
 
-<div id="leaderboard" >
+<div id="leaderboard">
+  <div class="habit-row">
   <% current_user.friends.limit(3).each do |friend| %>
     <h3><%= "#{friend.first_name} #{friend.last_name}" %></h3>
   <% end %>
+  </div>
 </div>
 
-<div class="underline center-text">
-  <h3>Posts</h3>
-</div>
-
-<textarea class="form-control" rows="3" data-name="<%= @habit.name %>"></textarea>
-<button id="post" type="button" class="btn btn-default">Add!</button>
+<%= render partial: 'section_head', locals: {title: 'post_title', actions: nil} %>
+<%= render 'post_area' %>
 
 <div class="posts">
-  <% @posts.each do |post| %>
-    <div>
-      <h4><%= post.body %> by <%= "#{post.user.first_name} #{post.user.last_name}" %></h4>  
-    </div>
-  <% end %>
+  <%= render partial: "post", collection: @posts %>
 </div>

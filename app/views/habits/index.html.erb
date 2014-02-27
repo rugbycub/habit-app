@@ -1,6 +1,6 @@
 <%= render partial: 'section_head', locals: {title: 'week', actions:'add_habit'} %>
 <% if @habits.first.nil? %>
-  <a href="<%= new_habit_path %>"><div class="first-event">Add your first event</div></a>
+  <a href="<%= new_habit_path %>"><div class="first-habit"><p>Add your first habit</p></div></a>
 
 <% else %>
   <div id="sortable">
@@ -10,11 +10,11 @@
     <% @habits.each do |h| %>
       <div class="habit-row ui-state-default">
         <div>
-          <div class="col-xs-5">
+          <div class="col-sm-4">
             <h3 class="habit-title"><%= link_to h.name, habit_path(h.id) %></h3>
             <h5><span class="frequency"><%= get_freq(h.frequency, start) %></span> days this <%= h.timeframe %></h5>
           </div>
-          <div class="col-xs-7">
+          <div class="col-sm-8">
             &nbsp;
             <%= render partial: 'pill', 
                        locals: {completions: h.this_weeks_completions, habit: h, j: j-1 }  %>

@@ -70,7 +70,7 @@ $(document).on('ready page:load', function(){
   
   });
 
-  $('.nav').on('click', 'li' ,function(event){
+  $('.nav-pills').on('click', 'li' ,function(event){
     event.preventDefault();
     event.stopPropagation();
     var d = Date.parse(this.dataset.day);

@@ -75,7 +75,9 @@ $(document).on('ready page:load', function(){
     event.stopPropagation();
     var d = Date.parse(this.dataset.day);
     var day = new Date(d);
-     if (day < new Date()){
+    var current_day = new Date();
+    current_day.setDate(current_day.getDate()-1)
+     if (day < current_day){
       var parent = $(this).closest('ul');
       var params = {name: parent.data().name, date: $(this).data().day};
       if ( $(this).hasClass('completed') ){

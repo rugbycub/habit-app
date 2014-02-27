@@ -14,7 +14,7 @@ class CompletionsController < ApplicationController
 
   def destroy
     habit = current_user.habits.find_by_name(params[:name])
-    completion = habit.completions.where("date = ?", Date.parse(params[:date]))
+    completion = habit.completions.where("date >= ? AND date < ?", Date.parse(params[:date]).beginning_of_day, Date.parse(params[:date]).end_of_day)
     completion.first.destroy
 
     respond_to do |f|

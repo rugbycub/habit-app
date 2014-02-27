@@ -155,7 +155,7 @@ $(function(){
 
   $('.nav').on('click', 'li' ,function(event){
     event.preventDefault();
-
+    event.stopPropagation();
     var d = Date.parse(this.dataset.day);
     var day = new Date(d);
      if (day < new Date()){

@@ -18,7 +18,7 @@
 //= require_tree .
 
 
-$(function(){
+$(document).on('ready page:load', function(){
 
   function include_completions(date, completions){
     for ( var i = 0; i < completions.length; i++ ){
@@ -171,19 +171,15 @@ $(function(){
     }
 
   });
-
-});
-
-$(function() {  
+ 
   $( "#sortable" ).sortable({   
     placeholder: "ui-sortable-placeholder",
     start: function(e, ui){
         ui.placeholder.height(ui.item.height());
     }   
   });  
-});  
+  
 
-$(function(){
   var freqs = $('.frequency');
   var freq, liWidth;
   var i = 1;
@@ -193,5 +189,6 @@ $(function(){
     $('#progress-ul-'+i).children().css('width', liWidth + '%');
     i++;
   });
+
 });
 

@@ -9,7 +9,7 @@
 <%= render partial: 'section_head', locals: {title: 'week', actions:'reminders'} %>
 
 <ul class="nav nav-pills center-text" data-name="<%= @habit.name %>">
-  <%= render partial: 'pill', locals: {completions: @completions, habit: @habit} %>
+  <%= render partial: 'pill', locals: {completions: @completions, habit: @habit, j: 0} %>
 </ul>
 
 

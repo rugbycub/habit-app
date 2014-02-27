@@ -9,7 +9,6 @@
     <% j = 1 %>
     <% @habits.each do |h| %>
       <div class="habit-row ui-state-default">
-        <div class="blue-top"></div>
         <div>
           <div class="col-xs-5">
             <h3 class="habit-title"><%= link_to h.name, habit_path(h.id) %></h3>
@@ -17,13 +16,13 @@
           </div>
           <div class="col-xs-7">
             &nbsp;
-            <%#= render 'pills' %>
+            <%= render partial: 'pill', 
+                       locals: {completions: h.this_weeks_completions, habit: h}  %>
           </div>
         </div>
         <div class="col-xs-12">
           <div class="progress-ul" id="progress-ul-<%= j %>">
-            <% complete_count = h.completions.where(
-              status: true && h.created_at >= start && h.created_at <= finish).count %>
+            <% complete_count = h.this_weeks_completions.count < h.frequency ? h.this_weeks_completions.count : h.frequency %>
             <% for i in 1..complete_count %>
                <div class="active"></div>
             <% end %>

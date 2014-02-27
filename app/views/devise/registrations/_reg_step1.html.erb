@@ -9,7 +9,8 @@
     <%= f.text_field :last_name %></div>
 
     <div><%= f.label "Phone Number (optional)" %><br>
-    <%= f.telephone_field :phone_number %></div>
+    <%= f.telephone_field :phone_number, :placeholder => "555-555-5555"%>
+    </div>
 
     <div><%= f.label :email %><br>
     <%= f.email_field :email, :autofocus => true %></div>

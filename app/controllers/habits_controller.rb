@@ -35,6 +35,20 @@ class HabitsController < ApplicationController
     end
   end
 
+  def edit
+    @habit = Habit.find(params[:id])    
+  end
+
+  def update
+    @habit = Habit.find(params[:id])
+
+    if @habit.update_attributes(get_habit_params)
+      redirect_to habit_path(@habit.id)
+    else
+      render :edit
+    end
+  end
+
   def destroy
     habit = Habit.find(params[:id])
     habit.destroy

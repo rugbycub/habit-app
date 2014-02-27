@@ -27,9 +27,11 @@ $(document).on('ready page:load', function(){
 
     var params = {};
     params.date = d.toISOString();
-    params.name = $('.nav-pills').data().name;
 
-    ajax_pill_request(params)
+    $('.nav-pills').each(function(index, item){
+      params.name = $('#pills-'+index).data().name;
+      ajax_pill_request(params, index);
+    });
 
   });
 
@@ -41,10 +43,12 @@ $(document).on('ready page:load', function(){
 
     var params = {};
     params.date = d.toISOString();
-    params.name = $('.nav-pills').data().name;
 
     if (new Date() > d){
-      ajax_pill_request(params);     
+     $('.nav-pills').each(function(index, item){
+        params.name = $('#pills-'+index).data().name;
+        ajax_pill_request(params, index);
+      });    
     }
 
   });
@@ -127,7 +131,7 @@ function include_active(date, current_date){
   return false;
 }
 
-function ajax_pill_request(params) {
+function ajax_pill_request(params, index) {
 
   $.ajax({type: "post", url: "/previous_week", data: params}).done(function(response){ 
     var d = Date.parse(response.date);
@@ -161,8 +165,8 @@ function ajax_pill_request(params) {
     $('#week-day').empty();
     $('#week-day').append(header);
 
-    $('ul.nav-pills').empty();
-    $('ul.nav-pills').append(list);
+    $('#pills-'+index).empty();
+    $('#pills-'+index).append(list);
 
   });
 

@@ -20,11 +20,9 @@
   
 </div>
 
-<%= render partial: 'section_head', locals: {title: 'week', actions:'reminders'} %>
+<%= render partial: 'section_head', locals: {title: 'week', actions:'reminders' } %>
 <div class="habit-show-row">
-  <ul class="nav nav-pills center-text" data-name="<%= @habit.name %>">
-    <%= render partial: 'pill', locals: {completions: @completions, habit: @habit} %>
-  </ul>
+  <%= render partial: 'pill', locals: {completions: @completions, habit: @habit, j: 0} %>
 </div>
 
 <%= render partial: 'section_head', locals: {title: 'leaderboard_title', actions: nil} %>
@@ -41,9 +39,6 @@
 <div class="underline center-text">
   <h3>Posts</h3>
 </div>
-
-<textarea class="form-control" rows="3" data-name="<%= @habit.name %>" data-habit="<%= @habit.id %>"></textarea>
-<button id="post" type="button" class="btn btn-default">Add!</button>
 
 <div class="posts">
   <%= render partial: "post", collection: @posts %>

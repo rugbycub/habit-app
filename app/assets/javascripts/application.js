@@ -77,15 +77,18 @@ $(document).on('ready page:load', function(){
     var d = Date.parse(this.dataset.day);
     var day = new Date(d);
     var current_day = new Date();
-    current_day.setDate(current_day.getDate()-1)
+    current_day.setDate(current_day.getDate()-1);
+    var status = $(this).closest('div.habit-row');
      if (day < current_day){
       var parent = $(this).closest('ul');
       var params = {name: parent.data().name, date: $(this).data().day};
       if ( $(this).hasClass('completed') ){
         $(this).removeClass('completed');
+        status.find('div.active').last().addClass('inactive').removeClass('active');
         $.ajax({type: 'delete', url: "/completions", data: params}).done(function(r){ alert("Deleted the completion"); }).fail(function(r){ alert("You Failed"); });
       } else {
         $(this).addClass('completed');
+        status.find('div.inactive').first().removeClass('inactive').addClass('active');
         $.ajax({type: 'post', url: "/completions", data: params}).done(function(r){ alert("Congratualtions"); }).fail(function(r){ alert("You Failed"); });
       }  
     }
